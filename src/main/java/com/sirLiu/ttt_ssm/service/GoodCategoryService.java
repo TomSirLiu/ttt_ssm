@@ -3,6 +3,8 @@ package com.sirLiu.ttt_ssm.service;
 import com.sirLiu.ttt_ssm.dao.TttGoodCategoryMapper;
 import com.sirLiu.ttt_ssm.model.TttGoodCategory;
 import com.sirLiu.ttt_ssm.model.TttGoodCategoryExample;
+import com.sirLiu.ttt_ssm.model.TttGoodsinfo;
+import com.sirLiu.ttt_ssm.model.json.GoodsInfoJson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +20,7 @@ public class GoodCategoryService {
     @Autowired
     private TttGoodCategoryMapper goodCategoryMapper;
 
-    public List<TttGoodCategory> getAllGoodCategories(){
+    public List<TttGoodCategory> getAllGoodCategories() {
         return goodCategoryMapper.selectByExample(new TttGoodCategoryExample());
     }
 
