@@ -119,7 +119,7 @@
                 <div class="col-md-3 col-xs-4 col-sm-6">
                     <div class="shopping-cart">
                         <a class="cart" href="#" title="view shopping cart"><span class="hidden-xs">shopping cart <br><small>2 item(s) - £199.00</small></span></a>
-                        <div class="top-cart-content">
+                        <div class="top-cart-content" id="cart-content">
                             <div class="media header-middle-checkout">
                                 <div class="media-left check-img">
                                     <a href="#"><img src="${pageContext.request.contextPath}/resources/img/cart/1.jpg"
@@ -152,6 +152,7 @@
                                     <p>£ 120.85</p>
                                 </div>
                             </div>
+
                             <div class="cart-total">
                                 <span>Total</span>
                                 <span><b>£ 199.00</b></span>
@@ -193,7 +194,7 @@
                             <ul>
                                 <li><a href="index.jsp">Home</a></li>
                                 <li><a href="about.jsp">About</a></li>
-                                <li><a href="shop.jsp">Shop</a></li>
+                                <li><a href="shop.jsp">MyShop</a></li>
                                 <li><a href="contact.jsp">contact</a></li>
                             </ul>
                         </nav>
@@ -355,7 +356,7 @@
                                                         </div>
                                                         <div class="product-action">
                                                             <button class="btn btn-default add-cart"
-                                                                    title="add to cart">Add
+                                                                    title="add to cart" onclick="addCart(${good.id},1)">Add
                                                                 to cart
                                                             </button>
                                                             <a class="add-wishlist" href="#" title="add to wishlist"><i
@@ -447,9 +448,6 @@
                                 </div>
                             </c:if>
                         </c:forEach>
-
-
-
 
                     </div>
                 </div>

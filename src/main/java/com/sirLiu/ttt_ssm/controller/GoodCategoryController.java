@@ -28,7 +28,7 @@ public class GoodCategoryController {
     public String getAllGoodCategories(HttpServletRequest request){
         List<TttGoodCategory> goodCategories=goodCategoryService.getAllGoodCategories();
         request.getSession().setAttribute("goodCategories",goodCategories);
-        return Msg.success().toString();
+        return Msg.success().add("goodCategories",goodCategories).toString();
     }
 
 }
