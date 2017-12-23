@@ -118,44 +118,14 @@
                 </div>
                 <div class="col-md-3 col-xs-4 col-sm-6">
                     <div class="shopping-cart">
-                        <a class="cart" href="#" title="view shopping cart"><span class="hidden-xs">shopping cart <br><small>2 item(s) - £199.00</small></span></a>
+                        <a class="cart" href="#" title="view shopping cart"><span class="hidden-xs">shopping cart <br><small
+                                id="conditionInCart">0 item(s) - £0.00</small></span></a>
                         <div class="top-cart-content" id="cart-content">
-                            <div class="media header-middle-checkout">
-                                <div class="media-left check-img">
-                                    <a href="#"><img src="${pageContext.request.contextPath}/resources/img/cart/1.jpg"
-                                                     alt=""/></a>
-                                </div>
-                                <div class="media-body checkout-content">
-                                    <h4 class="media-heading">
-                                        <span class="cart-count">2x</span>
-                                        <a href="#">Jacket</a>
-                                        <span class="btn-remove checkout-remove"
-                                              title="remove this product from my cart"><i class="fa fa-times"
-                                                                                          aria-hidden="true"></i></span>
-                                    </h4>
-                                    <p>£ 78.15</p>
-                                </div>
-                            </div>
-                            <div class="media header-middle-checkout last-child">
-                                <div class="media-left check-img">
-                                    <a href="#"><img src="${pageContext.request.contextPath}/resources/img/cart/2.jpg"
-                                                     alt=""/></a>
-                                </div>
-                                <div class="media-body checkout-content">
-                                    <h4 class="media-heading">
-                                        <span class="cart-count">1x</span>
-                                        <a href="#">Jacket</a>
-                                        <span class="btn-remove checkout-remove"
-                                              title="remove this product from my cart"><i class="fa fa-times"
-                                                                                          aria-hidden="true"></i></span>
-                                    </h4>
-                                    <p>£ 120.85</p>
-                                </div>
-                            </div>
+                            <%--   --%>
 
                             <div class="cart-total">
                                 <span>Total</span>
-                                <span><b>£ 199.00</b></span>
+                                <span><b id="cartTotalAmountB">£ 0.00</b></span>
                             </div>
                             <div class="checkout">
                                 <a href="#"><span>checkout<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span></a>
@@ -173,10 +143,10 @@
                     <div class="main-menu">
                         <nav>
                             <ul>
-                                <li><a href="index.jsp">Home</a></li>
-                                <li><a href="about.jsp">About</a></li>
-                                <li><a href="shop.jsp">Shop</a></li>
-                                <li><a href="contact.jsp">contact</a></li>
+                                <li><a href="${pageContext.request.contextPath}/user/entry">Home</a></li>
+                                <li><a href="${pageContext.request.contextPath}/user/about">About</a></li>
+                                <li><a href="${pageContext.request.contextPath}/user/shop">Shop</a></li>
+                                <li><a href="${pageContext.request.contextPath}/user/contact">contact</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -349,14 +319,19 @@
                                                             <div class="star"></div>
                                                         </div>
                                                         <div class="price-box">
-                                                            <span class="price"><fmt:formatNumber value="${good.price}" type="currency" pattern="£.00"/></span>
+                                                            <span class="price"><fmt:formatNumber value="${good.price}"
+                                                                                                  type="currency"
+                                                                                                  pattern="£.00"/></span>
                                                             <c:if test="${good.ifDiscount}">
-                                                                <span class="old-price"><fmt:formatNumber value="${good.price*1.2}" type="currency" pattern="£.00"/></span>
+                                                                <span class="old-price"><fmt:formatNumber
+                                                                        value="${good.price*1.2}" type="currency"
+                                                                        pattern="£.00"/></span>
                                                             </c:if>
                                                         </div>
                                                         <div class="product-action">
                                                             <button class="btn btn-default add-cart"
-                                                                    title="add to cart" onclick="addCart(${good.id},1)">Add
+                                                                    title="add to cart"
+                                                                    onclick="addCart(${good.id},1,false)">Add
                                                                 to cart
                                                             </button>
                                                             <a class="add-wishlist" href="#" title="add to wishlist"><i
@@ -429,9 +404,13 @@
                                                 <div class="star"></div>
                                             </div>
                                             <div class="price-box">
-                                                <span class="price"><fmt:formatNumber value="${good.price}" type="currency" pattern="£.00"/></span>
+                                                <span class="price"><fmt:formatNumber value="${good.price}"
+                                                                                      type="currency"
+                                                                                      pattern="£.00"/></span>
                                                 <c:if test="${good.ifDiscount}">
-                                                    <span class="old-price"><fmt:formatNumber value="${good.price*1.2}" type="currency" pattern="£.00"/></span>
+                                                    <span class="old-price"><fmt:formatNumber value="${good.price*1.2}"
+                                                                                              type="currency"
+                                                                                              pattern="£.00"/></span>
                                                 </c:if>
                                             </div>
                                             <div class="product-action">
@@ -440,7 +419,9 @@
                                                 <a class="add-wishlist" href="#" title="add to wishlist"><i
                                                         class="fa fa-heart"></i></a>
                                                 <a class="quick-view" href="#" title="quick view" data-toggle="modal"
-                                                   data-target="#myModal"  onclick="goodDetail(${good.id},'${good.category.name}')"><i class="fa fa-search"></i></a>
+                                                   data-target="#myModal"
+                                                   onclick="goodDetail(${good.id},'${good.category.name}')"><i
+                                                        class="fa fa-search"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -1431,23 +1412,23 @@
                                         <ul class="pic-tabs">
                                             <li class="active">
                                                 <a data-toggle="tab" href="#pic11"><img id="pro-tab1"
-                                                        src="${pageContext.request.contextPath}/resources/img/pro-tab/1.jpg"
-                                                        alt=""/></a>
+                                                                                        src="${pageContext.request.contextPath}/resources/img/pro-tab/1.jpg"
+                                                                                        alt=""/></a>
                                             </li>
                                             <li>
                                                 <a data-toggle="tab" href="#pic12"><img id="pro-tab2"
-                                                        src="${pageContext.request.contextPath}/resources/img/pro-tab/2.jpg"
-                                                        alt=""/></a>
+                                                                                        src="${pageContext.request.contextPath}/resources/img/pro-tab/2.jpg"
+                                                                                        alt=""/></a>
                                             </li>
                                             <li>
                                                 <a data-toggle="tab" href="#pic13"><img id="pro-tab3"
-                                                        src="${pageContext.request.contextPath}/resources/img/pro-tab/3.jpg"
-                                                        alt=""/></a>
+                                                                                        src="${pageContext.request.contextPath}/resources/img/pro-tab/3.jpg"
+                                                                                        alt=""/></a>
                                             </li>
                                             <lpic14i>
                                                 <a data-toggle="tab" href="#pic14"><img id="pro-tab4"
-                                                        src="${pageContext.request.contextPath}/resources/img/pro-tab/4.jpg"
-                                                        alt=""/></a>
+                                                                                        src="${pageContext.request.contextPath}/resources/img/pro-tab/4.jpg"
+                                                                                        alt=""/></a>
                                             </lpic14i>
                                         </ul>
                                         <div class="tab-content">
@@ -1509,10 +1490,10 @@
                                                         <a href="#"><img
                                                                 src="${pageContext.request.contextPath}/resources/img/singlepro/24.jpg"
                                                                 alt=""/></a>
-                                                            <span class="sale-box">
+                                                        <span class="sale-box">
                                                                     <span class="sale">Sale</span>
                                                             </span>
-                                                            <span class="new-box">
+                                                        <span class="new-box">
                                                                     <span class="new">New</span>
                                                             </span>
                                                     </div>
@@ -1544,10 +1525,10 @@
                                         <div class="add-cart">
                                             <p class="quantity cart-plus-minus">
                                                 <label>Quantity</label>
-                                                <input type="text" value="1"/>
+                                                <input type="text" value="1" id="goodDetailQuantity"/>
                                             </p>
                                             <div class="shop-add-cart">
-                                                <button>add to cart</button>
+                                                <button id="goodDetailAddToCartButton">add to cart</button>
                                             </div>
                                         </div>
                                         <div class="widget-icon">

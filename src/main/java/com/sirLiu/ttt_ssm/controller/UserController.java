@@ -105,4 +105,19 @@ public class UserController {
         }
     }
 
+    @RequestMapping(value = "/shop")
+    public String redirectToShop(){
+        return "shop";
+    }
+
+    @RequestMapping(value = "/about")
+    public String redirectToAbout(){
+        return "about";
+    }
+
+    @RequestMapping(value = "/contact")
+    public String redirectToContact(){
+        return "contact";
+    }
+
 }
