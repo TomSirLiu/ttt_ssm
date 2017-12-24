@@ -146,7 +146,7 @@
                                 <li><a href="${pageContext.request.contextPath}/user/entry">Home</a></li>
                                 <li><a href="${pageContext.request.contextPath}/user/about">About</a></li>
                                 <li><a href="${pageContext.request.contextPath}/user/shop">Shop</a></li>
-                                <li><a href="${pageContext.request.contextPath}/user/contact">contact</a></li>
+                                <li><a href="${pageContext.request.contextPath}/user/entrycontact.jsp">contact</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -338,7 +338,7 @@
                                                                     class="fa fa-heart"></i></a>
                                                             <a class="quick-view" href="#" title="quick view"
                                                                data-toggle="modal" data-target="#myModal"
-                                                               onclick="goodDetail(${good.id},'${good.category.name}')"><i
+                                                               onclick="goodDetail(${good.id})"><i
                                                                     class="fa fa-search"></i></a>
                                                         </div>
                                                     </div>
@@ -420,7 +420,7 @@
                                                         class="fa fa-heart"></i></a>
                                                 <a class="quick-view" href="#" title="quick view" data-toggle="modal"
                                                    data-target="#myModal"
-                                                   onclick="goodDetail(${good.id},'${good.category.name}')"><i
+                                                   onclick="goodDetail(${good.id})"><i
                                                         class="fa fa-search"></i></a>
                                             </div>
                                         </div>
@@ -1745,6 +1745,8 @@
 <script src="${pageContext.request.contextPath}/resources/js/plugins.js"></script>
 <!-- main js -->
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+<!-- base js -->
+<script src="${pageContext.request.contextPath}/resources/js/myJS/base.js"></script>
 <!-- user js -->
 <script src="${pageContext.request.contextPath}/resources/js/myJS/userJs.js"></script>
 <!-- good js -->

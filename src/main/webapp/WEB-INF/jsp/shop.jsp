@@ -172,48 +172,14 @@
                     <div class="shopping-cart">
                         <a class="cart" href="#" title="view shopping cart">
                                     <span class="hidden-xs">shopping cart <br>
-                                        <small>2 item(s) - £199.00</small></span>
+                                        <small id="conditionInCart">0 item(s) - £0.00</small></span>
                         </a>
-                        <div class="top-cart-content">
-                            <div class="media header-middle-checkout">
-                                <div class="media-left check-img">
-                                    <a href="#">
-                                        <img src="${pageContext.request.contextPath}/resources/img/cart/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <div class="media-body checkout-content">
-                                    <h4 class="media-heading">
-                                        <span class="cart-count">2x</span>
-                                        <a href="#">Jacket</a>
-                                        <span class="btn-remove checkout-remove"
-                                              title="remove this product from my cart">
-                                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                                </span>
-                                    </h4>
-                                    <p>£ 78.15</p>
-                                </div>
-                            </div>
-                            <div class="media header-middle-checkout last-child">
-                                <div class="media-left check-img">
-                                    <a href="#">
-                                        <img src="${pageContext.request.contextPath}/resources/img/cart/2.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <div class="media-body checkout-content">
-                                    <h4 class="media-heading">
-                                        <span class="cart-count">1x</span>
-                                        <a href="#">Jacket</a>
-                                        <span class="btn-remove checkout-remove"
-                                              title="remove this product from my cart">
-                                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                                </span>
-                                    </h4>
-                                    <p>£ 120.85</p>
-                                </div>
-                            </div>
+                        <div class="top-cart-content"  id="cart-content">
+                            <%--   --%>
+
                             <div class="cart-total">
                                 <span>Total</span>
-                                <span><b>£ 199.00</b></span>
+                                <span><b id="cartTotalAmountB">£ 0.00</b></span>
                             </div>
                             <div class="checkout">
                                 <a href="#">
@@ -295,47 +261,8 @@
                 <div class="shop-left-col wow fadeIn" data-wow-duration=".5s" data-wow-delay=".5s">
                     <div class="content-box">
                         <h2>Categories</h2>
-                        <ul>
-                            <li>
-                                        <span class="checkit">
-                                            <input class="checkbox" type="checkbox"/>
-                                        </span>
-                                <label class="check-label">
-                                    <a href="#">Cloths (13)</a>
-                                </label>
-                            </li>
-                            <li>
-                                        <span class="checkit">
-                                            <input class="checkbox" type="checkbox"/>
-                                        </span>
-                                <label class="check-label">
-                                    <a href="#">Men (9)</a>
-                                </label>
-                            </li>
-                            <li>
-                                        <span class="checkit">
-                                            <input class="checkbox" type="checkbox"/>
-                                        </span>
-                                <label class="check-label">
-                                    <a href="#">Women (11)</a>
-                                </label>
-                            </li>
-                            <li>
-                                        <span class="checkit">
-                                            <input class="checkbox" type="checkbox"/>
-                                        </span>
-                                <label class="check-label">
-                                    <a href="#">Shoes (2)</a>
-                                </label>
-                            </li>
-                            <li>
-                                        <span class="checkit">
-                                            <input class="checkbox" type="checkbox"/>
-                                        </span>
-                                <label class="check-label">
-                                    <a href="#">Sunglasses (8)</a>
-                                </label>
-                            </li>
+                        <ul id="ulForCategories">
+
                         </ul>
                     </div>
                     <div class="content-box">
@@ -354,14 +281,14 @@
                         </button>
                     </div>
                     <div class="content-box">
-                        <h2>filter by</h2>
+                        <h2>is new</h2>
                         <ul>
                             <li>
                                         <span class="checkit">
                                             <input class="checkbox" type="checkbox"/>
                                         </span>
                                 <label class="check-label">
-                                    <a href="#">l (1)</a>
+                                    <a href="#">yes</a>
                                 </label>
                             </li>
                             <li>
@@ -369,36 +296,21 @@
                                             <input class="checkbox" type="checkbox"/>
                                         </span>
                                 <label class="check-label">
-                                    <a href="#">m (1)</a>
+                                    <a href="#">no</a>
                                 </label>
                             </li>
-                            <li>
-                                        <span class="checkit">
-                                            <input class="checkbox" type="checkbox"/>
-                                        </span>
-                                <label class="check-label">
-                                    <a href="#">s (1)</a>
-                                </label>
-                            </li>
-                            <li>
-                                        <span class="checkit">
-                                            <input class="checkbox" type="checkbox"/>
-                                        </span>
-                                <label class="check-label">
-                                    <a href="#">xl (1)</a>
-                                </label>
-                            </li>
+
                         </ul>
                     </div>
                     <div class="content-box">
-                        <h2>colors</h2>
+                        <h2>is discount</h2>
                         <ul>
                             <li>
                                         <span class="checkit">
                                             <input class="checkbox" type="checkbox"/>
                                         </span>
                                 <label class="check-label">
-                                    <a href="#">black (1)</a>
+                                    <a href="#">yes</a>
                                 </label>
                             </li>
                             <li>
@@ -406,60 +318,21 @@
                                             <input class="checkbox" type="checkbox"/>
                                         </span>
                                 <label class="check-label">
-                                    <a href="#">white (8)</a>
+                                    <a href="#">no</a>
                                 </label>
                             </li>
-                            <li>
-                                        <span class="checkit">
-                                            <input class="checkbox" type="checkbox"/>
-                                        </span>
-                                <label class="check-label">
-                                    <a href="#">orange (5)</a>
-                                </label>
-                            </li>
-                            <li>
-                                        <span class="checkit">
-                                            <input class="checkbox" type="checkbox"/>
-                                        </span>
-                                <label class="check-label">
-                                    <a href="#">blue (7)</a>
-                                </label>
-                            </li>
-                            <li>
-                                        <span class="checkit">
-                                            <input class="checkbox" type="checkbox"/>
-                                        </span>
-                                <label class="check-label">
-                                    <a href="#">yellow(11)</a>
-                                </label>
-                            </li>
-                            <li>
-                                        <span class="checkit">
-                                            <input class="checkbox" type="checkbox"/>
-                                        </span>
-                                <label class="check-label">
-                                    <a href="#">brown (16)</a>
-                                </label>
-                            </li>
-                            <li>
-                                        <span class="checkit">
-                                            <input class="checkbox" type="checkbox"/>
-                                        </span>
-                                <label class="check-label">
-                                    <a href="#">red (9)</a>
-                                </label>
-                            </li>
+
                         </ul>
                     </div>
                     <div class="content-box">
-                        <h2>properties</h2>
+                        <h2>stocks</h2>
                         <ul>
                             <li>
                                         <span class="checkit">
                                             <input class="checkbox" type="checkbox"/>
                                         </span>
                                 <label class="check-label">
-                                    <a href="#">colorful dress (2)</a>
+                                    <a href="#">more than 100</a>
                                 </label>
                             </li>
                             <li>
@@ -467,38 +340,18 @@
                                             <input class="checkbox" type="checkbox"/>
                                         </span>
                                 <label class="check-label">
-                                    <a href="#">maxi dress (2)</a>
+                                    <a href="#">less than 100</a>
                                 </label>
                             </li>
-                            <li>
-                                        <span class="checkit">
-                                            <input class="checkbox" type="checkbox"/>
-                                        </span>
-                                <label class="check-label">
-                                    <a href="#">midi dress (2)</a>
-                                </label>
-                            </li>
-                            <li>
-                                        <span class="checkit">
-                                            <input class="checkbox" type="checkbox"/>
-                                        </span>
-                                <label class="check-label">
-                                    <a href="#">short dress (4)</a>
-                                </label>
-                            </li>
-                            <li>
-                                        <span class="checkit">
-                                            <input class="checkbox" type="checkbox"/>
-                                        </span>
-                                <label class="check-label">
-                                    <a href="#">short sleeve (3)</a>
-                                </label>
-                            </li>
+
                         </ul>
                     </div>
                     <div class="content-box">
                         <h2>tags</h2>
                         <ul class="tags">
+                            <li>
+                                <a href="#">commend</a>
+                            </li>
                             <li>
                                 <a href="#">top</a>
                             </li>
@@ -568,29 +421,19 @@
                                     <option value="#">Product Name: A to Z</option>
                                     <option value="#">Product Name: Z to A</option>
                                     <option value="#">In stock</option>
-                                    <option value="#">Reference: Lowest first</option>
                                     <option selected="selected" value="#">--</option>
                                 </select>
                             </div>
                             <div class="show hidden-xs">
                                 <label>Show</label>
                                 <select>
-                                    <option value="#">24</option>
+                                    <option value="#">9</option>
                                     <option selected="selected" value="#">12</option>
                                 </select>
                                 <span>per page</span>
                             </div>
                             <div class="shop-breadcrumb">
-                                <ul>
-                                    <li class="active">
-                                        <a href="#">1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">2</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">3</a>
-                                    </li>
+                                <ul id="ulForGoodsPage">
                                     <li>
                                         <a href="#">></a>
                                     </li>
@@ -602,572 +445,13 @@
                                 <div class="category-product">
                                     <!-- Tab panes -->
                                     <div class="tab-content">
+
                                         <div role="tabpanel" class="tab-pane active fade in" id="gried_view">
-                                            <div class="col-md-4 col-sm-6 col-xs-12 mar-bot">
-                                                <!-- single-product-start -->
-                                                <div class="single-product">
-                                                    <div class="single-product-img">
-                                                        <a href="#">
-                                                            <img src="${pageContext.request.contextPath}/resources/img/singlepro/8.jpg" alt=""/>
-                                                        </a>
-                                                        <span class="sale-box">
-                                                                    <span class="sale">Sale</span>
-                                                                </span>
-                                                        <span class="new-box">
-                                                                    <span class="new">New</span>
-                                                                </span>
-                                                    </div>
-                                                    <div class="single-product-content">
-                                                        <div class="product-title">
-                                                            <h5>
-                                                                <a href="#">consectetuer</a>
-                                                            </h5>
-                                                        </div>
-                                                        <div class="rating">
-                                                            <div class="star star-on"></div>
-                                                            <div class="star star-on"></div>
-                                                            <div class="star star-on"></div>
-                                                            <div class="star star-on"></div>
-                                                            <div class="star"></div>
-                                                        </div>
-                                                        <div class="price-box">
-                                                            <span class="price">£50.00</span>
-                                                            <span class="old-price">£70.00</span>
-                                                        </div>
-                                                        <div class="product-action">
-                                                            <button class="button btn btn-default add-cart"
-                                                                    title="add to cart">Add to cart
-                                                            </button>
-                                                            <a class="add-wishlist" href="#" title="add to wishlist">
-                                                                <i class="fa fa-heart"></i>
-                                                            </a>
-                                                            <a class="quick-view" href="#" title="quick view"
-                                                               data-toggle="modal" data-target="#myModal">
-                                                                <i class="fa fa-search"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- single-product-end -->
-                                            </div>
-                                            <div class="col-md-4 col-sm-6 col-xs-12 mar-bot">
-                                                <!-- single-product-start -->
-                                                <div class="single-product">
-                                                    <div class="single-product-img">
-                                                        <a href="#">
-                                                            <img src="${pageContext.request.contextPath}/resources/img/singlepro/2.jpg" alt=""/>
-                                                        </a>
-                                                        <span class="sale-box">
-                                                                    <span class="sale">Sale</span>
-                                                                </span>
-                                                        <span class="new-box">
-                                                                    <span class="new">New</span>
-                                                                </span>
-                                                    </div>
-                                                    <div class="single-product-content">
-                                                        <div class="product-title">
-                                                            <h5>
-                                                                <a href="#">Feugiat justo lacinia</a>
-                                                            </h5>
-                                                        </div>
-                                                        <div class="rating">
-                                                            <div class="star"></div>
-                                                            <div class="star"></div>
-                                                            <div class="star"></div>
-                                                            <div class="star"></div>
-                                                            <div class="star"></div>
-                                                        </div>
-                                                        <div class="price-box">
-                                                            <span class="price">£50.00</span>
-                                                            <span class="old-price">£70.00</span>
-                                                        </div>
-                                                        <div class="product-action">
-                                                            <button class="button btn btn-default add-cart"
-                                                                    title="add to cart">Add to cart
-                                                            </button>
-                                                            <a class="add-wishlist" href="#" title="add to wishlist">
-                                                                <i class="fa fa-heart"></i>
-                                                            </a>
-                                                            <a class="quick-view" href="#" title="quick view"
-                                                               data-toggle="modal" data-target="#myModal">
-                                                                <i class="fa fa-search"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- single-product-end -->
-                                            </div>
-                                            <div class="col-md-4 col-sm-6 col-xs-12 no-mar-top top-mar">
-                                                <!-- single-product-start -->
-                                                <div class="single-product">
-                                                    <div class="single-product-img">
-                                                        <a href="#">
-                                                            <img src="${pageContext.request.contextPath}/resources/img/singlepro/9.jpg" alt=""/>
-                                                        </a>
-                                                        <span class="sale-box">
-                                                                    <span class="sale">Sale</span>
-                                                                </span>
-                                                        <span class="new-box">
-                                                                    <span class="new">New</span>
-                                                                </span>
-                                                    </div>
-                                                    <div class="single-product-content">
-                                                        <div class="product-title">
-                                                            <h5>
-                                                                <a href="#">Fermentum dictum</a>
-                                                            </h5>
-                                                        </div>
-                                                        <div class="rating">
-                                                            <div class="star star-on"></div>
-                                                            <div class="star star-on"></div>
-                                                            <div class="star star-on"></div>
-                                                            <div class="star star-on"></div>
-                                                            <div class="star star-on"></div>
-                                                        </div>
-                                                        <div class="price-box">
-                                                            <span class="price">£50.00</span>
-                                                            <span class="old-price">£70.00</span>
-                                                        </div>
-                                                        <div class="product-action">
-                                                            <button class="button btn btn-default add-cart"
-                                                                    title="add to cart">Add to cart
-                                                            </button>
-                                                            <a class="add-wishlist" href="#" title="add to wishlist">
-                                                                <i class="fa fa-heart"></i>
-                                                            </a>
-                                                            <a class="quick-view" href="#" title="quick view"
-                                                               data-toggle="modal" data-target="#myModal">
-                                                                <i class="fa fa-search"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- single-product-end -->
-                                            </div>
-                                            <div class="col-md-4 col-sm-6 col-xs-12 top-mar">
-                                                <!-- single-product-start -->
-                                                <div class="single-product">
-                                                    <div class="single-product-img">
-                                                        <a href="#">
-                                                            <img src="${pageContext.request.contextPath}/resources/img/singlepro/1.jpg" alt=""/>
-                                                        </a>
-                                                        <span class="sale-box">
-                                                                    <span class="sale">Sale</span>
-                                                                </span>
-                                                        <span class="new-box">
-                                                                    <span class="new">New</span>
-                                                                </span>
-                                                    </div>
-                                                    <div class="single-product-content">
-                                                        <div class="product-title">
-                                                            <h5>
-                                                                <a href="#">Dictum</a>
-                                                            </h5>
-                                                        </div>
-                                                        <div class="rating">
-                                                            <div class="star star-on"></div>
-                                                            <div class="star star-on"></div>
-                                                            <div class="star star-on"></div>
-                                                            <div class="star star-on"></div>
-                                                            <div class="star"></div>
-                                                        </div>
-                                                        <div class="price-box">
-                                                            <span class="price">£50.00</span>
-                                                            <span class="old-price">£70.00</span>
-                                                        </div>
-                                                        <div class="product-action">
-                                                            <button class="button btn btn-default add-cart"
-                                                                    title="add to cart">Add to cart
-                                                            </button>
-                                                            <a class="add-wishlist" href="#" title="add to wishlist">
-                                                                <i class="fa fa-heart"></i>
-                                                            </a>
-                                                            <a class="quick-view" href="#" title="quick view"
-                                                               data-toggle="modal" data-target="#myModal">
-                                                                <i class="fa fa-search"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- single-product-end -->
-                                            </div>
-                                            <div class="col-md-4 col-sm-6 col-xs-12 top-mar">
-                                                <!-- single-product-start -->
-                                                <div class="single-product">
-                                                    <div class="single-product-img">
-                                                        <a href="#">
-                                                            <img src="${pageContext.request.contextPath}/resources/img/singlepro/7.jpg" alt=""/>
-                                                        </a>
-                                                        <span class="sale-box">
-                                                                    <span class="sale">Sale</span>
-                                                                </span>
-                                                        <span class="new-box">
-                                                                    <span class="new">New</span>
-                                                                </span>
-                                                    </div>
-                                                    <div class="single-product-content">
-                                                        <div class="product-title">
-                                                            <h5>
-                                                                <a href="#">Feugiat justo lacinia</a>
-                                                            </h5>
-                                                        </div>
-                                                        <div class="rating">
-                                                            <div class="star"></div>
-                                                            <div class="star"></div>
-                                                            <div class="star"></div>
-                                                            <div class="star"></div>
-                                                            <div class="star"></div>
-                                                        </div>
-                                                        <div class="price-box">
-                                                            <span class="price">£50.00</span>
-                                                            <span class="old-price">£70.00</span>
-                                                        </div>
-                                                        <div class="product-action">
-                                                            <button class="button btn btn-default add-cart"
-                                                                    title="add to cart">Add to cart
-                                                            </button>
-                                                            <a class="add-wishlist" href="#" title="add to wishlist">
-                                                                <i class="fa fa-heart"></i>
-                                                            </a>
-                                                            <a class="quick-view" href="#" title="quick view"
-                                                               data-toggle="modal" data-target="#myModal">
-                                                                <i class="fa fa-search"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- single-product-end -->
-                                            </div>
-                                            <div class="col-md-4 col-sm-6 col-xs-12 top-mar">
-                                                <!-- single-product-start -->
-                                                <div class="single-product">
-                                                    <div class="single-product-img">
-                                                        <a href="#">
-                                                            <img src="${pageContext.request.contextPath}/resources/img/singlepro/4.jpg" alt=""/>
-                                                        </a>
-                                                        <span class="sale-box">
-                                                                    <span class="sale">Sale</span>
-                                                                </span>
-                                                        <span class="new-box">
-                                                                    <span class="new">New</span>
-                                                                </span>
-                                                    </div>
-                                                    <div class="single-product-content">
-                                                        <div class="product-title">
-                                                            <h5>
-                                                                <a href="#">consectetuer</a>
-                                                            </h5>
-                                                        </div>
-                                                        <div class="rating">
-                                                            <div class="star star-on"></div>
-                                                            <div class="star star-on"></div>
-                                                            <div class="star star-on"></div>
-                                                            <div class="star star-on"></div>
-                                                            <div class="star"></div>
-                                                        </div>
-                                                        <div class="price-box">
-                                                            <span class="price">£50.00</span>
-                                                            <span class="old-price">£70.00</span>
-                                                        </div>
-                                                        <div class="product-action">
-                                                            <button class="button btn btn-default add-cart"
-                                                                    title="add to cart">Add to cart
-                                                            </button>
-                                                            <a class="add-wishlist" href="#" title="add to wishlist">
-                                                                <i class="fa fa-heart"></i>
-                                                            </a>
-                                                            <a class="quick-view" href="#" title="quick view"
-                                                               data-toggle="modal" data-target="#myModal">
-                                                                <i class="fa fa-search"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- single-product-end -->
-                                            </div>
-                                            <div class="col-md-4 col-sm-6 col-xs-12 top-mar">
-                                                <!-- single-product-start -->
-                                                <div class="single-product">
-                                                    <div class="single-product-img">
-                                                        <a href="#">
-                                                            <img src="${pageContext.request.contextPath}/resources/img/singlepro/11.jpg" alt=""/>
-                                                        </a>
-                                                        <span class="sale-box">
-                                                                    <span class="sale">Sale</span>
-                                                                </span>
-                                                        <span class="new-box">
-                                                                    <span class="new">New</span>
-                                                                </span>
-                                                    </div>
-                                                    <div class="single-product-content">
-                                                        <div class="product-title">
-                                                            <h5>
-                                                                <a href="#">Feugiat justo lacinia</a>
-                                                            </h5>
-                                                        </div>
-                                                        <div class="rating">
-                                                            <div class="star"></div>
-                                                            <div class="star"></div>
-                                                            <div class="star"></div>
-                                                            <div class="star"></div>
-                                                            <div class="star"></div>
-                                                        </div>
-                                                        <div class="price-box">
-                                                            <span class="price">£50.00</span>
-                                                            <span class="old-price">£70.00</span>
-                                                        </div>
-                                                        <div class="product-action">
-                                                            <button class="button btn btn-default add-cart"
-                                                                    title="add to cart">Add to cart
-                                                            </button>
-                                                            <a class="add-wishlist" href="#" title="add to wishlist">
-                                                                <i class="fa fa-heart"></i>
-                                                            </a>
-                                                            <a class="quick-view" href="#" title="quick view"
-                                                               data-toggle="modal" data-target="#myModal">
-                                                                <i class="fa fa-search"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- single-product-end -->
-                                            </div>
-                                            <div class="col-md-4 col-sm-6 col-xs-12 top-mar">
-                                                <!-- single-product-start -->
-                                                <div class="single-product">
-                                                    <div class="single-product-img">
-                                                        <a href="#">
-                                                            <img src="${pageContext.request.contextPath}/resources/img/singlepro/5.jpg" alt=""/>
-                                                        </a>
-                                                        <span class="sale-box">
-                                                                    <span class="sale">Sale</span>
-                                                                </span>
-                                                        <span class="new-box">
-                                                                    <span class="new">New</span>
-                                                                </span>
-                                                    </div>
-                                                    <div class="single-product-content">
-                                                        <div class="product-title">
-                                                            <h5>
-                                                                <a href="#">Fermentum dictum</a>
-                                                            </h5>
-                                                        </div>
-                                                        <div class="rating">
-                                                            <div class="star star-on"></div>
-                                                            <div class="star star-on"></div>
-                                                            <div class="star star-on"></div>
-                                                            <div class="star star-on"></div>
-                                                            <div class="star star-on"></div>
-                                                        </div>
-                                                        <div class="price-box">
-                                                            <span class="price">£50.00</span>
-                                                            <span class="old-price">£70.00</span>
-                                                        </div>
-                                                        <div class="product-action">
-                                                            <button class="button btn btn-default add-cart"
-                                                                    title="add to cart">Add to cart
-                                                            </button>
-                                                            <a class="add-wishlist" href="#" title="add to wishlist">
-                                                                <i class="fa fa-heart"></i>
-                                                            </a>
-                                                            <a class="quick-view" href="#" title="quick view"
-                                                               data-toggle="modal" data-target="#myModal">
-                                                                <i class="fa fa-search"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- single-product-end -->
-                                            </div>
-                                            <div class="col-md-4 col-sm-6 col-xs-12 top-mar">
-                                                <!-- single-product-start -->
-                                                <div class="single-product">
-                                                    <div class="single-product-img">
-                                                        <a href="#">
-                                                            <img src="${pageContext.request.contextPath}/resources/img/singlepro/12.jpg" alt=""/>
-                                                        </a>
-                                                        <span class="sale-box">
-                                                                    <span class="sale">Sale</span>
-                                                                </span>
-                                                        <span class="new-box">
-                                                                    <span class="new">New</span>
-                                                                </span>
-                                                    </div>
-                                                    <div class="single-product-content">
-                                                        <div class="product-title">
-                                                            <h5>
-                                                                <a href="#">Dictum</a>
-                                                            </h5>
-                                                        </div>
-                                                        <div class="rating">
-                                                            <div class="star star-on"></div>
-                                                            <div class="star star-on"></div>
-                                                            <div class="star star-on"></div>
-                                                            <div class="star star-on"></div>
-                                                            <div class="star"></div>
-                                                        </div>
-                                                        <div class="price-box">
-                                                            <span class="price">£50.00</span>
-                                                            <span class="old-price">£70.00</span>
-                                                        </div>
-                                                        <div class="product-action">
-                                                            <button class="button btn btn-default add-cart"
-                                                                    title="add to cart">Add to cart
-                                                            </button>
-                                                            <a class="add-wishlist" href="#" title="add to wishlist">
-                                                                <i class="fa fa-heart"></i>
-                                                            </a>
-                                                            <a class="quick-view" href="#" title="quick view"
-                                                               data-toggle="modal" data-target="#myModal">
-                                                                <i class="fa fa-search"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- single-product-end -->
-                                            </div>
-                                            <div class="col-md-4 col-sm-6 col-xs-12 top-mar">
-                                                <!-- single-product-start -->
-                                                <div class="single-product">
-                                                    <div class="single-product-img">
-                                                        <a href="#">
-                                                            <img src="${pageContext.request.contextPath}/resources/img/singlepro/3.jpg" alt=""/>
-                                                        </a>
-                                                        <span class="sale-box">
-                                                                    <span class="sale">Sale</span>
-                                                                </span>
-                                                        <span class="new-box">
-                                                                    <span class="new">New</span>
-                                                                </span>
-                                                    </div>
-                                                    <div class="single-product-content">
-                                                        <div class="product-title">
-                                                            <h5>
-                                                                <a href="#">Feugiat justo lacinia</a>
-                                                            </h5>
-                                                        </div>
-                                                        <div class="rating">
-                                                            <div class="star"></div>
-                                                            <div class="star"></div>
-                                                            <div class="star"></div>
-                                                            <div class="star"></div>
-                                                            <div class="star"></div>
-                                                        </div>
-                                                        <div class="price-box">
-                                                            <span class="price">£50.00</span>
-                                                            <span class="old-price">£70.00</span>
-                                                        </div>
-                                                        <div class="product-action">
-                                                            <button class="button btn btn-default add-cart"
-                                                                    title="add to cart">Add to cart
-                                                            </button>
-                                                            <a class="add-wishlist" href="#" title="add to wishlist">
-                                                                <i class="fa fa-heart"></i>
-                                                            </a>
-                                                            <a class="quick-view" href="#" title="quick view"
-                                                               data-toggle="modal" data-target="#myModal">
-                                                                <i class="fa fa-search"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- single-product-end -->
-                                            </div>
-                                            <div class="col-md-4 col-sm-6 col-xs-12 top-mar">
-                                                <!-- single-product-start -->
-                                                <div class="single-product">
-                                                    <div class="single-product-img">
-                                                        <a href="#">
-                                                            <img src="${pageContext.request.contextPath}/resources/img/singlepro/6.jpg" alt=""/>
-                                                        </a>
-                                                        <span class="sale-box">
-                                                                    <span class="sale">Sale</span>
-                                                                </span>
-                                                        <span class="new-box">
-                                                                    <span class="new">New</span>
-                                                                </span>
-                                                    </div>
-                                                    <div class="single-product-content">
-                                                        <div class="product-title">
-                                                            <h5>
-                                                                <a href="#">Feugiat justo lacinia</a>
-                                                            </h5>
-                                                        </div>
-                                                        <div class="rating">
-                                                            <div class="star"></div>
-                                                            <div class="star"></div>
-                                                            <div class="star"></div>
-                                                            <div class="star"></div>
-                                                            <div class="star"></div>
-                                                        </div>
-                                                        <div class="price-box">
-                                                            <span class="price">£50.00</span>
-                                                            <span class="old-price">£70.00</span>
-                                                        </div>
-                                                        <div class="product-action">
-                                                            <button class="button btn btn-default add-cart"
-                                                                    title="add to cart">Add to cart
-                                                            </button>
-                                                            <a class="add-wishlist" href="#" title="add to wishlist">
-                                                                <i class="fa fa-heart"></i>
-                                                            </a>
-                                                            <a class="quick-view" href="#" title="quick view"
-                                                               data-toggle="modal" data-target="#myModal">
-                                                                <i class="fa fa-search"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- single-product-end -->
-                                            </div>
-                                            <div class="col-md-4 col-sm-6 col-xs-12 top-mar">
-                                                <!-- single-product-start -->
-                                                <div class="single-product">
-                                                    <div class="single-product-img">
-                                                        <a href="#">
-                                                            <img src="${pageContext.request.contextPath}/resources/img/singlepro/1.jpg" alt=""/>
-                                                        </a>
-                                                        <span class="sale-box">
-                                                                    <span class="sale">Sale</span>
-                                                                </span>
-                                                        <span class="new-box">
-                                                                    <span class="new">New</span>
-                                                                </span>
-                                                    </div>
-                                                    <div class="single-product-content">
-                                                        <div class="product-title">
-                                                            <h5>
-                                                                <a href="#">Fermentum dictum</a>
-                                                            </h5>
-                                                        </div>
-                                                        <div class="rating">
-                                                            <div class="star star-on"></div>
-                                                            <div class="star star-on"></div>
-                                                            <div class="star star-on"></div>
-                                                            <div class="star star-on"></div>
-                                                            <div class="star star-on"></div>
-                                                        </div>
-                                                        <div class="price-box">
-                                                            <span class="price">£50.00</span>
-                                                            <span class="old-price">£70.00</span>
-                                                        </div>
-                                                        <div class="product-action">
-                                                            <button class="button btn btn-default add-cart"
-                                                                    title="add to cart">Add to cart
-                                                            </button>
-                                                            <a class="add-wishlist" href="#" title="add to wishlist">
-                                                                <i class="fa fa-heart"></i>
-                                                            </a>
-                                                            <a class="quick-view" href="#" title="quick view"
-                                                               data-toggle="modal" data-target="#myModal">
-                                                                <i class="fa fa-search"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- single-product-end -->
-                                            </div>
+
+
+
                                         </div>
+
                                         <div role="tabpanel" class="tab-pane fade" id="list_view">
                                             <div class="list-view">
                                                 <div class="row">
@@ -2165,9 +1449,9 @@
 </footer>
 <!-- footer-end -->
 <!-- Modal -->
+<!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
-
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
@@ -2180,28 +1464,40 @@
                             <div class="col-md-5 col-xs-12 col-sm-5">
                                 <div class="picture-tab">
                                     <ul class="pic-tabs">
-                                        <li class="active"><a data-toggle="tab" href="#pic11"><img
-                                                src="${pageContext.request.contextPath}/resources/img/pro-tab/1.jpg" alt=""/></a></li>
-                                        <li><a data-toggle="tab" href="#pic12"><img src="${pageContext.request.contextPath}/resources/img/pro-tab/2.jpg" alt=""/></a>
+                                        <li class="active">
+                                            <a data-toggle="tab" href="#pic11"><img id="pro-tab1"
+                                                                                    src="${pageContext.request.contextPath}/resources/img/pro-tab/1.jpg"
+                                                                                    alt=""/></a>
                                         </li>
-                                        <li><a data-toggle="tab" href="#pic13"><img src="${pageContext.request.contextPath}/resources/img/pro-tab/3.jpg" alt=""/></a>
+                                        <li>
+                                            <a data-toggle="tab" href="#pic12"><img id="pro-tab2"
+                                                                                    src="${pageContext.request.contextPath}/resources/img/pro-tab/2.jpg"
+                                                                                    alt=""/></a>
                                         </li>
-                                        <li><a data-toggle="tab" href="#pic14"><img src="${pageContext.request.contextPath}/resources/img/pro-tab/4.jpg" alt=""/></a>
+                                        <li>
+                                            <a data-toggle="tab" href="#pic13"><img id="pro-tab3"
+                                                                                    src="${pageContext.request.contextPath}/resources/img/pro-tab/3.jpg"
+                                                                                    alt=""/></a>
                                         </li>
+                                        <lpic14i>
+                                            <a data-toggle="tab" href="#pic14"><img id="pro-tab4"
+                                                                                    src="${pageContext.request.contextPath}/resources/img/pro-tab/4.jpg"
+                                                                                    alt=""/></a>
+                                        </lpic14i>
                                     </ul>
                                     <div class="tab-content">
                                         <div id="pic11" class="tab-pane fade in active">
                                             <!-- single-product-start -->
                                             <div class="single-product">
                                                 <div class="single-product-img">
-                                                    <a href="#">
-                                                        <img src="${pageContext.request.contextPath}/resources/img/singlepro/21.jpg" alt=""/>
-                                                    </a>
+                                                    <a href="#"><img
+                                                            src="${pageContext.request.contextPath}/resources/img/singlepro/21.jpg"
+                                                            alt=""/></a>
                                                     <span class="sale-box">
-                                                                <span class="sale">Sale</span>
+                                                                    <span class="sale">Sale</span>
                                                             </span>
                                                     <span class="new-box">
-                                                                <span class="new">New</span>
+                                                                    <span class="new">New</span>
                                                             </span>
                                                 </div>
                                             </div>
@@ -2211,14 +1507,14 @@
                                             <!-- single-product-start -->
                                             <div class="single-product">
                                                 <div class="single-product-img">
-                                                    <a href="#">
-                                                        <img src="${pageContext.request.contextPath}/resources/img/singlepro/22.jpg" alt=""/>
-                                                    </a>
+                                                    <a href="#"><img
+                                                            src="${pageContext.request.contextPath}/resources/img/singlepro/22.jpg"
+                                                            alt=""/></a>
                                                     <span class="sale-box">
-                                                                <span class="sale">Sale</span>
+                                                                    <span class="sale">Sale</span>
                                                             </span>
                                                     <span class="new-box">
-                                                                <span class="new">New</span>
+                                                                    <span class="new">New</span>
                                                             </span>
                                                 </div>
                                             </div>
@@ -2228,14 +1524,14 @@
                                             <!-- single-product-start -->
                                             <div class="single-product">
                                                 <div class="single-product-img">
-                                                    <a href="#">
-                                                        <img src="${pageContext.request.contextPath}/resources/img/singlepro/23.jpg" alt=""/>
-                                                    </a>
+                                                    <a href="#"><img
+                                                            src="${pageContext.request.contextPath}/resources/img/singlepro/23.jpg"
+                                                            alt=""/></a>
                                                     <span class="sale-box">
-                                                                <span class="sale">Sale</span>
+                                                                    <span class="sale">Sale</span>
                                                             </span>
                                                     <span class="new-box">
-                                                                <span class="new">New</span>
+                                                                    <span class="new">New</span>
                                                             </span>
                                                 </div>
                                             </div>
@@ -2245,14 +1541,14 @@
                                             <!-- single-product-start -->
                                             <div class="single-product">
                                                 <div class="single-product-img">
-                                                    <a href="#">
-                                                        <img src="${pageContext.request.contextPath}/resources/img/singlepro/24.jpg" alt=""/>
-                                                    </a>
+                                                    <a href="#"><img
+                                                            src="${pageContext.request.contextPath}/resources/img/singlepro/24.jpg"
+                                                            alt=""/></a>
                                                     <span class="sale-box">
-                                                                <span class="sale">Sale</span>
+                                                                    <span class="sale">Sale</span>
                                                             </span>
                                                     <span class="new-box">
-                                                                <span class="new">New</span>
+                                                                    <span class="new">New</span>
                                                             </span>
                                                 </div>
                                             </div>
@@ -2263,10 +1559,10 @@
                             </div>
                             <div class="col-md-7 col-xs-12 col-sm-7">
                                 <div class="product-details-info">
-                                    <h5 class="product-title">Feugiat justo lacinia</h5>
+                                    <h5 class="product-title" id="goodDetailTitle">..</h5>
                                     <div class="price-box">
-                                        <span class="price">£50.00</span>
-                                        <span class="old-price">£70.00</span>
+                                        <span class="price" id="goodDetailPrice">..</span>
+                                        <span class="old-price" id="goodDetailOldPrice">..</span>
                                     </div>
                                     <div class="rating">
                                         <div class="star star-on"></div>
@@ -2276,34 +1572,24 @@
                                         <div class="star"></div>
                                     </div>
                                     <div class="short-description">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue
-                                            nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi
-                                            ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate
-                                            adipiscing cursus eu, suscipit id nulla.
+                                        <p id="goodDetailDescription">
+                                            ..
                                         </p>
                                     </div>
                                     <div class="add-cart">
                                         <p class="quantity cart-plus-minus">
                                             <label>Quantity</label>
-                                            <input type="text" value="1"/>
+                                            <input type="text" value="1" id="goodDetailQuantity"/>
                                         </p>
                                         <div class="shop-add-cart">
-                                            <button>add to cart</button>
+                                            <button id="goodDetailAddToCartButton">add to cart</button>
                                         </div>
                                     </div>
                                     <div class="widget-icon">
-                                        <a href="#">
-                                            <i class="fa fa-facebook"></i>
-                                        </a>
-                                        <a href="#">
-                                            <i class="fa fa-twitter"></i>
-                                        </a>
-                                        <a href="#">
-                                            <i class="fa fa-linkedin"></i>
-                                        </a>
-                                        <a href="#">
-                                            <i class="fa fa-google-plus"></i>
-                                        </a>
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                                        <a href="#"><i class="fa fa-google-plus"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -2336,6 +1622,12 @@
 <script src="${pageContext.request.contextPath}/resources/js/plugins.js"></script>
 <!-- main js -->
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+<!-- base js -->
+<script src="${pageContext.request.contextPath}/resources/js/myJS/base.js"></script>
+<!-- goodJs js -->
+<script src="${pageContext.request.contextPath}/resources/js/myJS/goodJs.js"></script>
+<!-- shop js -->
+<script src="${pageContext.request.contextPath}/resources/js/myJS/shop.js"></script>
 </body>
 </html>
 

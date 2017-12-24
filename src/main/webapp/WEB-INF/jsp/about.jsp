@@ -870,6 +870,8 @@
 <script src="${pageContext.request.contextPath}/resources/js/plugins.js"></script>
 <!-- main js -->
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+<!-- base js -->
+<script src="${pageContext.request.contextPath}/resources/js/myJS/base.js"></script>
 </body>
 </html>
 
