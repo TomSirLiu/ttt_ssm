@@ -31,7 +31,7 @@ public class GoodManagementController {
     public String getAllGoods(HttpServletRequest request) {
         List<TttGoodsinfo> goods = goodManagementService.getAllGoods();
         List<GoodsInfoJson> goodsInfoJsons = new ArrayList<>();
-        for (TttGoodsinfo goodsinfo : goods){
+        for (TttGoodsinfo goodsinfo : goods) {
             goodsInfoJsons.add(goodManagementService.convertGoodInfoToJson(goodsinfo));
         }
         request.getSession().setAttribute("goods", goodsInfoJsons);
@@ -44,18 +44,22 @@ public class GoodManagementController {
         TttGoodsinfo goodsinfo = goodManagementService.selectGoodByGoodId(goodId);
         if (goodsinfo != null) {
             request.setAttribute("good", goodManagementService.convertGoodInfoToJson(goodsinfo));
-            return Msg.success().add("good",goodManagementService.convertGoodInfoToJson(goodsinfo)).toString();
+            return Msg.success().add("good", goodManagementService.convertGoodInfoToJson(goodsinfo)).toString();
         } else {
             return Msg.fail().add("error", "没有对应goodId的商品").toString();
         }
     }
 
-    @RequestMapping(value = "/getGoodsFilterByGoodCategories")
+    @RequestMapping(value = "/getGoodsWithFilter")
     @ResponseBody
-    public String getGoodsFilterByGoodCategories(@RequestParam(value = "goodCategories")String goodCategoriyNamesAsString){
+    public String getGoodsWithFilter(@RequestParam(value = "goodCategories",required = false) String goodCategoriyNamesAsString) {
         String[] goodCategoriyNames = goodCategoriyNamesAsString.split(",");
         List<TttGoodsinfo> selectedGoods = goodManagementService.getGoodsFilterByGoodCategories(goodCategoriyNames);
-        return Msg.success().add("selectedGoods",selectedGoods).toString();
+        List<GoodsInfoJson> selectedGoodsInfoJsons = new ArrayList<>();
+        for (TttGoodsinfo goodsinfo : selectedGoods) {
+            selectedGoodsInfoJsons.add(goodManagementService.convertGoodInfoToJson(goodsinfo));
+        }
+        return Msg.success().add("selectedGoods", selectedGoodsInfoJsons).toString();
     }
 
 }

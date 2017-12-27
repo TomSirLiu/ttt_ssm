@@ -58,7 +58,7 @@ public class GoodManagementService {
             goodCategoryIds.add(goodCategory.getId());
         }
         goodsinfoExample.createCriteria().andCategoryIdIn(goodCategoryIds);
-        return goodsinfoMapper.selectByExampleWithBLOBs(new TttGoodsinfoExample());
+        return goodsinfoMapper.selectByExampleWithBLOBs(goodsinfoExample);
     }
 
 }

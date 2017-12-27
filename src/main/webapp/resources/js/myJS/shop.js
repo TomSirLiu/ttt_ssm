@@ -4,6 +4,8 @@
  */
 
 var goods;
+var sizeOfEachPage = 12;
+var currentPage = 1;
 
 $(function () {
     $.get(
@@ -26,45 +28,75 @@ $(function () {
             }
         }
     );
-    quantityOfGoodsPage(12);
-    showGoodsInGriedView(1, 12);
+    quantityOfGoodsPage(sizeOfEachPage);
+    showGoodsInView(currentPage, sizeOfEachPage);
 });
 
+/**
+ * 商品显示过滤条件
+ */
 function goodFilter() {
     var selectedCategories = [];
     $("#ulForCategories").find("input:checked").parents("li").find("a").each(function (index, object) {
         selectedCategories.push($(object).text());
     });
-    console.log(selectedCategories.join(","));
-    $.get({
-            contentType: "application/json",
-            url: "/ttt_ssm/good/getGoodsFilterByGoodCategories",
-            data:{goodCategories: selectedCategories.join(",")},
-            success: function (data) {
-                data = JSON.parse(data);
-                console.log(data);
+    if (selectedCategories.length === 0) {
+        $.get({
+                url: "/ttt_ssm/good/getAllGoods",
+                async: false,
+                success: function (data) {
+                    data = JSON.parse(data);
+                    console.log(data);
+                    goods = data.goods;
+                }
             }
-        }
-    );
+        );
+    } else {
+        $.get({
+                contentType: "application/json",
+                url: "/ttt_ssm/good/getGoodsWithFilter",
+                data: {goodCategories: selectedCategories.join(",")},
+                success: function (data) {
+                    goods = JSON.parse(data).selectedGoods;
+                    console.log(goods);
+                    quantityOfGoodsPage(sizeOfEachPage);
+                    showGoodsInView(currentPage, sizeOfEachPage);
+                }
+            }
+        );
+    }
 }
 
+/**
+ * 显示右上角的页面切换
+ * @param size
+ */
 function quantityOfGoodsPage(size) {
     $("#ulForGoodsPage").html("");
     const index = parseInt(goods.length / size) + 1;
+    if (currentPage > index) {
+        currentPage = index;
+    }
     for (var i = index; i > 0; i--) {
         var content;
         if (i === 1) {
-            content = '<li class="active"> <a onclick="showGoodsInGriedView(1,' + size + ')">' + i + '</a></li>';
+            content = '<li class="active"> <a href="javascript:;" onclick="showGoodsInView(1,' + size + ')">' + i + '</a></li>';
         } else {
-            content = '<li> <a onclick="showGoodsInGriedView(' + i + ',' + size + ')">' + i + '</a></li>';
+            content = '<li> <a href="javascript:;" onclick="showGoodsInView(' + i + ',' + size + ')">' + i + '</a></li>';
         }
         $("#ulForGoodsPage").prepend(content);
     }
-    var lastContent = '<li> <a onclick="showGoodsInGriedView(' + index + ',' + size + ')">' + '\>' + '</a></li>';
+    var lastContent = '<li> <a onclick="showGoodsInView(' + index + ',' + size + ')">' + '\>' + '</a></li>';
     $("#ulForGoodsPage").append(lastContent);
 }
 
-function showGoodsInGriedView(page, size) {
+/**
+ * 切换页面
+ * @param page
+ * @param size
+ */
+function showGoodsInView(page, size) {
+    currentPage = page;
     $("#ulForGoodsPage li").removeClass("active");
     $("#ulForGoodsPage li:nth-child(" + page + ")").addClass("active");
 
@@ -171,9 +203,12 @@ function showGoodsInGriedView(page, size) {
     //--列表形式展示 end
 }
 
-
+/**
+ * 切换每页显示的内容个数
+ */
 $('#selectSizeOfEachPage').on('change', function (e) {
     var size = $("option:selected", this).val();
-    quantityOfGoodsPage(size);
-    showGoodsInGriedView(1, size);
+    sizeOfEachPage = size;
+    quantityOfGoodsPage(sizeOfEachPage);
+    showGoodsInView(currentPage, sizeOfEachPage);
 });

@@ -35,6 +35,15 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+    <filter>
+        <filter-name>userLogin</filter-name>
+        <filter-class>com.sirLiu.ttt_ssm.filter.UserLoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>userLogin</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
     <!-- spring监听器 -->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
