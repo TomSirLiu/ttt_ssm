@@ -2,12 +2,15 @@ package com.sirLiu.ttt_ssm.service;
 
 import com.sirLiu.ttt_ssm.dao.TttGoodCategoryMapper;
 import com.sirLiu.ttt_ssm.dao.TttGoodsinfoMapper;
+import com.sirLiu.ttt_ssm.model.TttGoodCategory;
+import com.sirLiu.ttt_ssm.model.TttGoodCategoryExample;
 import com.sirLiu.ttt_ssm.model.TttGoodsinfo;
 import com.sirLiu.ttt_ssm.model.TttGoodsinfoExample;
 import com.sirLiu.ttt_ssm.model.json.GoodsInfoJson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -43,6 +46,19 @@ public class GoodManagementService {
         goodInfoJson.setIfDiscount(goodsinfo.getIsDiscount());
         goodInfoJson.setStock(goodsinfo.getStock());
         return goodInfoJson;
+    }
+
+    public List<TttGoodsinfo> getGoodsFilterByGoodCategories(String[] goodCategoriyNames) {
+        TttGoodsinfoExample goodsinfoExample = new TttGoodsinfoExample();
+        List<Integer> goodCategoryIds = new ArrayList<>();
+        for (String goodCategoryName : goodCategoriyNames) {
+            TttGoodCategoryExample goodCategoryExample = new TttGoodCategoryExample();
+            goodCategoryExample.createCriteria().andNameEqualTo(goodCategoryName);
+            TttGoodCategory goodCategory = goodCategoryMapper.selectByExample(goodCategoryExample).get(0);
+            goodCategoryIds.add(goodCategory.getId());
+        }
+        goodsinfoExample.createCriteria().andCategoryIdIn(goodCategoryIds);
+        return goodsinfoMapper.selectByExampleWithBLOBs(new TttGoodsinfoExample());
     }
 
 }

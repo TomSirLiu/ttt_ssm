@@ -6,6 +6,7 @@ import com.sirLiu.ttt_ssm.model.json.GoodsInfoJson;
 import com.sirLiu.ttt_ssm.service.GoodManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -47,6 +48,14 @@ public class GoodManagementController {
         } else {
             return Msg.fail().add("error", "没有对应goodId的商品").toString();
         }
+    }
+
+    @RequestMapping(value = "/getGoodsFilterByGoodCategories")
+    @ResponseBody
+    public String getGoodsFilterByGoodCategories(@RequestParam(value = "goodCategories")String goodCategoriyNamesAsString){
+        String[] goodCategoriyNames = goodCategoriyNamesAsString.split(",");
+        List<TttGoodsinfo> selectedGoods = goodManagementService.getGoodsFilterByGoodCategories(goodCategoriyNames);
+        return Msg.success().add("selectedGoods",selectedGoods).toString();
     }
 
 }
