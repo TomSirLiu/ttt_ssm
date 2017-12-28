@@ -160,12 +160,12 @@
                 </div>
                 <div class="col-md-5 col-sm-6 hidden-xs">
                     <div class="search-box">
-                        <form action="#">
-                            <input class="form-control search-form" type="text" placeholder="Search entire store here"/>
-                            <button class="search-button" value="Search" type="submit">
+                        <div action="#">
+                            <input class="form-control search-form" type="text" placeholder="Search entire goods with good's name here" id="fuzzyGoodName"/>
+                            <button class="search-button" value="Search" onclick="selectGoodsWithFuzzyGoodName()">
                                 <i class="fa fa-search"></i>
                             </button>
-                        </form>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-xs-4 col-sm-6">
@@ -415,13 +415,13 @@
                             </div>
                             <div class="sort-by hidden-xs">
                                 <label>Sort by</label>
-                                <select>
-                                    <option value="#">Price: Lowest first</option>
-                                    <option value="#">Price: Highest first</option>
-                                    <option value="#">Product Name: A to Z</option>
-                                    <option value="#">Product Name: Z to A</option>
-                                    <option value="#">In stock</option>
-                                    <option selected="selected" value="#">--</option>
+                                <select id="selectOrderBy">
+                                    <option value="goodOrderByPriceLowerFirst">Price: Lowest first</option>
+                                    <option value="goodOrderByPriceHigherFirst">Price: Highest first</option>
+                                    <option value="goodOrderByGoodNameFromAToZ">Product Name: A to Z</option>
+                                    <option value="goodOrderByGoodNameFromZToA">Product Name: Z to A</option>
+                                    <option value="goodOrderByStockMost">In stock most</option>
+                                    <option selected="selected" value="goodOrderByGoodId">--</option>
                                 </select>
                             </div>
                             <div class="show hidden-xs">

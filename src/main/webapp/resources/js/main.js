@@ -232,7 +232,7 @@
     $("#slider-range").slider({
         range: true,
         min: 0,
-        max: 10000,
+        max: 11000,
         values: [1, 9999],
         slide: function(event, ui) {
             $("#amount").val("£" + ui.values[0] + " - £" + ui.values[1]);

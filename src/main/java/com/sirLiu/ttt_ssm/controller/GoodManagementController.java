@@ -58,13 +58,11 @@ public class GoodManagementController {
                                      @RequestParam(value = "goodIfNew", required = false) Boolean goodIfNew,
                                      @RequestParam(value = "goodIfDiscount", required = false) Boolean goodIfDiscount,
                                      @RequestParam(value = "goodStockDivisionWith100 ", required = false) Boolean goodStockOver100) {
-
         List<TttGoodsinfo> selectedGoods = goodManagementService.getAllGoods();
         List<GoodsInfoJson> selectedGoodsInfoJsons = new CopyOnWriteArrayList<>();
         for (TttGoodsinfo goodsinfo : selectedGoods) {
             selectedGoodsInfoJsons.add(goodManagementService.convertGoodInfoToJson(goodsinfo));
         }
-
         if (goodCategoriyNamesAsString != null) {
             String[] goodCategoriyNames = goodCategoriyNamesAsString.split(",");
             if (goodCategoriyNames.length != 0) {
@@ -79,7 +77,6 @@ public class GoodManagementController {
                 }
             }
         }
-
         if (goodPriceRangeAsString != null) {
             String[] goodPriceRanges = goodPriceRangeAsString.split(",");
             if (goodPriceRanges.length != 0) {
@@ -90,7 +87,6 @@ public class GoodManagementController {
                 }
             }
         }
-
         if (goodIfNew != null) {
             for (GoodsInfoJson goodsInfoJson : selectedGoodsInfoJsons) {
                 if (goodsInfoJson.getIfNew() != goodIfNew) {
@@ -98,7 +94,6 @@ public class GoodManagementController {
                 }
             }
         }
-
         if (goodIfDiscount != null) {
             for (GoodsInfoJson goodsInfoJson : selectedGoodsInfoJsons) {
                 if (goodsInfoJson.getIfDiscount() != goodIfDiscount) {
@@ -106,7 +101,6 @@ public class GoodManagementController {
                 }
             }
         }
-
         if (goodStockOver100 != null) {
             if (goodStockOver100) {
                 for (GoodsInfoJson goodsInfoJson : selectedGoodsInfoJsons) {
@@ -122,8 +116,18 @@ public class GoodManagementController {
                 }
             }
         }
-
         return Msg.success().add("selectedGoods", selectedGoodsInfoJsons).toString();
+    }
+
+    @RequestMapping(value = "/fuzzyQueryOfGoodsWithGoodName")
+    @ResponseBody
+    public String fuzzyQueryOfGoodsWithGoodName(@RequestParam(value = "fuzzyGoodName") String fuzzyGoodName) {
+        List<TttGoodsinfo> goodsWithFuzzyGoodName = goodManagementService.fuzzyQueryOfGoodsWithGoodName(fuzzyGoodName);
+        List<GoodsInfoJson> goodsJsonWithFuzzyGoodName = new ArrayList<>();
+        for (TttGoodsinfo goodsinfo : goodsWithFuzzyGoodName) {
+            goodsJsonWithFuzzyGoodName.add(goodManagementService.convertGoodInfoToJson(goodsinfo));
+        }
+        return Msg.success().add("goodsWithFuzzyGoodName", goodsJsonWithFuzzyGoodName).toString();
     }
 
 }

@@ -48,17 +48,10 @@ public class GoodManagementService {
         return goodInfoJson;
     }
 
-    public List<TttGoodsinfo> getGoodsFilterByGoodCategories(String[] goodCategoriyNames) {
+   public List<TttGoodsinfo> fuzzyQueryOfGoodsWithGoodName(String fuzzyGoodName){
         TttGoodsinfoExample goodsinfoExample = new TttGoodsinfoExample();
-        List<Integer> goodCategoryIds = new ArrayList<>();
-        for (String goodCategoryName : goodCategoriyNames) {
-            TttGoodCategoryExample goodCategoryExample = new TttGoodCategoryExample();
-            goodCategoryExample.createCriteria().andNameEqualTo(goodCategoryName);
-            TttGoodCategory goodCategory = goodCategoryMapper.selectByExample(goodCategoryExample).get(0);
-            goodCategoryIds.add(goodCategory.getId());
-        }
-        goodsinfoExample.createCriteria().andCategoryIdIn(goodCategoryIds);
+        goodsinfoExample.createCriteria().andNameLike("%"+fuzzyGoodName+"%");
         return goodsinfoMapper.selectByExampleWithBLOBs(goodsinfoExample);
-    }
+   }
 
 }
