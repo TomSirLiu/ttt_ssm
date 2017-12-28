@@ -56,22 +56,22 @@
                     <div class="header-top-right">
                         <ul class="header-links hidden-xs">
                             <li>
-                                <a class="my-account" href="#">
+                                <a class="my-account" href="javascript:;">
                                     My Account
                                 </a>
                             </li>
                             <li>
-                                <a class="my-wishlist" href="#">
+                                <a class="my-wishlist" href="javascript:;">
                                     My Wishlist
                                 </a>
                             </li>
                             <li>
-                                <a class="checkout" href="#">
+                                <a class="checkout" href="javascript:;">
                                     Checkout
                                 </a>
                             </li>
                             <li>
-                                <a class="login" href="#">
+                                <a class="login" href="javascript:;">
                                     Login
                                 </a>
                             </li>
@@ -85,12 +85,12 @@
                                     <span class="dollar">Dollar</span>
                                 </li>
                                 <li>
-                                    <a href="#" title="">
+                                    <a href="javascript:;" title="">
                                         <span class="euro">Euro</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" title="">
+                                    <a href="javascript:;" title="">
                                         <span class="sheqel">Sheqel</span>
                                     </a>
                                 </li>
@@ -107,37 +107,37 @@
                                 </li>
                                 <li>
                                     <img src="${pageContext.request.contextPath}/resources/img/lang/2.jpg" alt="ar"/>
-                                    <a href="#" title="">
+                                    <a href="javascript:;" title="">
                                         <span>اللغة العربية</span>
                                     </a>
                                 </li>
                                 <li>
                                     <img src="${pageContext.request.contextPath}/resources/img/lang/7.jpg" alt="hb"/>
-                                    <a href="#" title="">
+                                    <a href="javascript:;" title="">
                                         <span>עִברִית</span>
                                     </a>
                                 </li>
                                 <li>
                                     <img src="${pageContext.request.contextPath}/resources/img/lang/3.jpg" alt="es"/>
-                                    <a href="#" title="">
+                                    <a href="javascript:;" title="">
                                         <span>Español</span>
                                     </a>
                                 </li>
                                 <li>
                                     <img src="${pageContext.request.contextPath}/resources/img/lang/4.jpg" alt="ph"/>
-                                    <a href="#" title="">
+                                    <a href="javascript:;" title="">
                                         <span>Pilipino</span>
                                     </a>
                                 </li>
                                 <li>
                                     <img src="${pageContext.request.contextPath}/resources/img/lang/5.jpg" alt="fr"/>
-                                    <a href="#" title="">
+                                    <a href="javascript:;" title="">
                                         <span>français</span>
                                     </a>
                                 </li>
                                 <li>
                                     <img src="${pageContext.request.contextPath}/resources/img/lang/6.jpg" alt="sd"/>
-                                    <a href="#" title="">
+                                    <a href="javascript:;" title="">
                                         <span>svensk</span>
                                     </a>
                                 </li>
@@ -170,21 +170,21 @@
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-4">
                     <div class="shopping-cart">
-                        <a class="cart" href="#" title="view shopping cart">
+                        <a class="cart" href="javascript:;" title="view shopping cart">
                                     <span class="hidden-xs">shopping cart <br>
                                         <small>2 item(s) - £199.00</small></span>
                         </a>
                         <div class="top-cart-content">
                             <div class="media header-middle-checkout">
                                 <div class="media-left check-img">
-                                    <a href="#">
+                                    <a href="javascript:;">
                                         <img src="${pageContext.request.contextPath}/resources/img/cart/1.jpg" alt=""/>
                                     </a>
                                 </div>
                                 <div class="media-body checkout-content">
                                     <h4 class="media-heading">
                                         <span class="cart-count">2x</span>
-                                        <a href="#">Jacket</a>
+                                        <a href="javascript:;">Jacket</a>
                                         <span class="btn-remove checkout-remove"
                                               title="remove this product from my cart">
                                                     <i class="fa fa-times" aria-hidden="true"></i>
@@ -195,14 +195,14 @@
                             </div>
                             <div class="media header-middle-checkout last-child">
                                 <div class="media-left check-img">
-                                    <a href="#">
+                                    <a href="javascript:;">
                                         <img src="${pageContext.request.contextPath}/resources/img/cart/2.jpg" alt=""/>
                                     </a>
                                 </div>
                                 <div class="media-body checkout-content">
                                     <h4 class="media-heading">
                                         <span class="cart-count">1x</span>
-                                        <a href="#">Jacket</a>
+                                        <a href="javascript:;">Jacket</a>
                                         <span class="btn-remove checkout-remove"
                                               title="remove this product from my cart">
                                                     <i class="fa fa-times" aria-hidden="true"></i>
@@ -216,7 +216,7 @@
                                 <span><b>£ 199.00</b></span>
                             </div>
                             <div class="checkout">
-                                <a href="#">
+                                <a href="javascript:;">
                                             <span>checkout
                                                 <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
                                             </span>
@@ -381,21 +381,21 @@
                         </div>
                         <div class="member-details">
                             <div class="mb-wrap">
-                                <h4><a href="#">Md Rabiul Islam Robi</a></h4>
+                                <h4><a href="javascript:;">Md Rabiul Islam Robi</a></h4>
                                 <h5>developer</h5>
                                 <ul class="member-social-links">
                                     <li>
-                                        <a href="#" target="_blank">
+                                        <a href="javascript:;" target="_blank">
                                             <i class="fa fa-facebook"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" target="_blank">
+                                        <a href="javascript:;" target="_blank">
                                             <i class="fa fa-twitter"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" target="_blank">
+                                        <a href="javascript:;" target="_blank">
                                             <i class="fa fa-google-plus"></i>
                                         </a>
                                     </li>
@@ -411,21 +411,21 @@
                         </div>
                         <div class="member-details">
                             <div class="mb-wrap">
-                                <h4><a href="#">Lutful Kabir</a></h4>
+                                <h4><a href="javascript:;">Lutful Kabir</a></h4>
                                 <h5>developer</h5>
                                 <ul class="member-social-links">
                                     <li>
-                                        <a href="#" target="_blank">
+                                        <a href="javascript:;" target="_blank">
                                             <i class="fa fa-facebook"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" target="_blank">
+                                        <a href="javascript:;" target="_blank">
                                             <i class="fa fa-twitter"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" target="_blank">
+                                        <a href="javascript:;" target="_blank">
                                             <i class="fa fa-google-plus"></i>
                                         </a>
                                     </li>
@@ -441,21 +441,21 @@
                         </div>
                         <div class="member-details">
                             <div class="mb-wrap">
-                                <h4><a href="#">Arifa Afsana</a></h4>
+                                <h4><a href="javascript:;">Arifa Afsana</a></h4>
                                 <h5>developer</h5>
                                 <ul class="member-social-links">
                                     <li>
-                                        <a href="#" target="_blank">
+                                        <a href="javascript:;" target="_blank">
                                             <i class="fa fa-facebook"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" target="_blank">
+                                        <a href="javascript:;" target="_blank">
                                             <i class="fa fa-twitter"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" target="_blank">
+                                        <a href="javascript:;" target="_blank">
                                             <i class="fa fa-google-plus"></i>
                                         </a>
                                     </li>
@@ -471,21 +471,21 @@
                         </div>
                         <div class="member-details">
                             <div class="mb-wrap">
-                                <h4><a href="#">Saikat Ahmed</a></h4>
+                                <h4><a href="javascript:;">Saikat Ahmed</a></h4>
                                 <h5>developer</h5>
                                 <ul class="member-social-links">
                                     <li>
-                                        <a href="#" target="_blank">
+                                        <a href="javascript:;" target="_blank">
                                             <i class="fa fa-facebook"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" target="_blank">
+                                        <a href="javascript:;" target="_blank">
                                             <i class="fa fa-twitter"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" target="_blank">
+                                        <a href="javascript:;" target="_blank">
                                             <i class="fa fa-google-plus"></i>
                                         </a>
                                     </li>
@@ -514,56 +514,56 @@
                 <div class="brand-carousel">
                     <div class="col-md-12">
                         <div class="single-brand">
-                            <a href="#">
+                            <a href="javascript:;">
                                 <img src="${pageContext.request.contextPath}/resources/img/brand/1.png" alt=""/>
                             </a>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="single-brand">
-                            <a href="#">
+                            <a href="javascript:;">
                                 <img src="${pageContext.request.contextPath}/resources/img/brand/1.png" alt=""/>
                             </a>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="single-brand">
-                            <a href="#">
+                            <a href="javascript:;">
                                 <img src="${pageContext.request.contextPath}/resources/img/brand/1.png" alt=""/>
                             </a>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="single-brand">
-                            <a href="#">
+                            <a href="javascript:;">
                                 <img src="${pageContext.request.contextPath}/resources/img/brand/1.png" alt=""/>
                             </a>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="single-brand">
-                            <a href="#">
+                            <a href="javascript:;">
                                 <img src="${pageContext.request.contextPath}/resources/img/brand/1.png" alt=""/>
                             </a>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="single-brand">
-                            <a href="#">
+                            <a href="javascript:;">
                                 <img src="${pageContext.request.contextPath}/resources/img/brand/1.png" alt=""/>
                             </a>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="single-brand">
-                            <a href="#">
+                            <a href="javascript:;">
                                 <img src="${pageContext.request.contextPath}/resources/img/brand/1.png" alt=""/>
                             </a>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="single-brand">
-                            <a href="#">
+                            <a href="javascript:;">
                                 <img src="${pageContext.request.contextPath}/resources/img/brand/1.png" alt=""/>
                             </a>
                         </div>
@@ -586,22 +586,22 @@
                                 <h4>Information</h4>
                                 <ul class="toggle-footer">
                                     <li>
-                                        <a title="Specials" href="#">Specials</a>
+                                        <a title="Specials" href="javascript:;">Specials</a>
                                     </li>
                                     <li>
-                                        <a title="New products" href="#">New products</a>
+                                        <a title="New products" href="javascript:;">New products</a>
                                     </li>
                                     <li>
-                                        <a title="Best sellers" href="#">Best sellers</a>
+                                        <a title="Best sellers" href="javascript:;">Best sellers</a>
                                     </li>
                                     <li>
-                                        <a title="Our stores" href="#">Our stores</a>
+                                        <a title="Our stores" href="javascript:;">Our stores</a>
                                     </li>
                                     <li>
-                                        <a title="Contact us" href="#">Contact us</a>
+                                        <a title="Contact us" href="javascript:;">Contact us</a>
                                     </li>
                                     <li>
-                                        <a title="Sitemap" href="#">Sitemap</a>
+                                        <a title="Sitemap" href="javascript:;">Sitemap</a>
                                     </li>
                                 </ul>
                             </div>
@@ -609,16 +609,16 @@
                                 <h4>My account</h4>
                                 <ul class="toggle-footer">
                                     <li>
-                                        <a title="My orders" href="#">My orders</a>
+                                        <a title="My orders" href="javascript:;">My orders</a>
                                     </li>
                                     <li>
-                                        <a title="My credit slips" href="#"> My credit slips</a>
+                                        <a title="My credit slips" href="javascript:;"> My credit slips</a>
                                     </li>
                                     <li>
-                                        <a title="My addresses" href="#">My addresses</a>
+                                        <a title="My addresses" href="javascript:;">My addresses</a>
                                     </li>
                                     <li>
-                                        <a title="My personal info" href="#">My personal info</a>
+                                        <a title="My personal info" href="javascript:;">My personal info</a>
                                     </li>
                                 </ul>
                             </div>
@@ -626,19 +626,19 @@
                                 <h4>category</h4>
                                 <ul class="toggle-footer">
                                     <li>
-                                        <a title="My orders" href="#">women</a>
+                                        <a title="My orders" href="javascript:;">women</a>
                                     </li>
                                     <li>
-                                        <a title="My credit slips" href="#">men</a>
+                                        <a title="My credit slips" href="javascript:;">men</a>
                                     </li>
                                     <li>
-                                        <a title="My addresses" href="#">category</a>
+                                        <a title="My addresses" href="javascript:;">category</a>
                                     </li>
                                     <li>
-                                        <a title="My personal info" href="#">equipment</a>
+                                        <a title="My personal info" href="javascript:;">equipment</a>
                                     </li>
                                     <li>
-                                        <a title="My personal info" href="#">watch</a>
+                                        <a title="My personal info" href="javascript:;">watch</a>
                                     </li>
                                 </ul>
                             </div>
@@ -655,7 +655,7 @@
                                         <span> 01234-567890</span>
                                     </p>
                                     <p class="email add">
-                                        <a href="#">admin@admin.com</a>
+                                        <a href="javascript:;">admin@admin.com</a>
                                     </p>
                                 </div>
                             </div>
@@ -663,7 +663,7 @@
                     </div>
                 </div>
                 <div class="payment">
-                    <a href="#">
+                    <a href="javascript:;">
                         <img src="${pageContext.request.contextPath}/resources/img/payment.png" alt=""/>
                     </a>
                 </div>
@@ -675,16 +675,16 @@
                     <div class="col-md-6 col-sm-12 col-xs-12 footer-link">
                         <ul>
                             <li>
-                                <a href="#">Customer Service</a>
+                                <a href="javascript:;">Customer Service</a>
                             </li>
                             <li>
-                                <a href="#">Secure payment</a>
+                                <a href="javascript:;">Secure payment</a>
                             </li>
                             <li>
-                                <a href="#">Term of Use</a>
+                                <a href="javascript:;">Term of Use</a>
                             </li>
                             <li>
-                                <a href="#">About us</a>
+                                <a href="javascript:;">About us</a>
                             </li>
                         </ul>
                     </div>
@@ -728,7 +728,7 @@
                                             <!-- single-product-start -->
                                             <div class="single-product">
                                                 <div class="single-product-img">
-                                                    <a href="#">
+                                                    <a href="javascript:;">
                                                         <img src="${pageContext.request.contextPath}/resources/img/singlepro/21.jpg" alt=""/>
                                                     </a>
                                                     <span class="sale-box">
@@ -745,7 +745,7 @@
                                             <!-- single-product-start -->
                                             <div class="single-product">
                                                 <div class="single-product-img">
-                                                    <a href="#">
+                                                    <a href="javascript:;">
                                                         <img src="${pageContext.request.contextPath}/resources/img/singlepro/22.jpg" alt=""/>
                                                     </a>
                                                     <span class="sale-box">
@@ -762,7 +762,7 @@
                                             <!-- single-product-start -->
                                             <div class="single-product">
                                                 <div class="single-product-img">
-                                                    <a href="#">
+                                                    <a href="javascript:;">
                                                         <img src="${pageContext.request.contextPath}/resources/img/singlepro/23.jpg" alt=""/>
                                                     </a>
                                                     <span class="sale-box">
@@ -779,7 +779,7 @@
                                             <!-- single-product-start -->
                                             <div class="single-product">
                                                 <div class="single-product-img">
-                                                    <a href="#">
+                                                    <a href="javascript:;">
                                                         <img src="${pageContext.request.contextPath}/resources/img/singlepro/24.jpg" alt=""/>
                                                     </a>
                                                     <span class="sale-box">
@@ -826,16 +826,16 @@
                                         </div>
                                     </div>
                                     <div class="widget-icon">
-                                        <a href="#">
+                                        <a href="javascript:;">
                                             <i class="fa fa-facebook"></i>
                                         </a>
-                                        <a href="#">
+                                        <a href="javascript:;">
                                             <i class="fa fa-twitter"></i>
                                         </a>
-                                        <a href="#">
+                                        <a href="javascript:;">
                                             <i class="fa fa-linkedin"></i>
                                         </a>
-                                        <a href="#">
+                                        <a href="javascript:;">
                                             <i class="fa fa-google-plus"></i>
                                         </a>
                                     </div>

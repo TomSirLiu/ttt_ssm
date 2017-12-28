@@ -50,10 +50,10 @@
                 <div class="col-md-6 col-xs-12 col-sm-12">
                     <div class="header-top-right">
                         <ul class="header-links hidden-xs">
-                            <li><a class="my-account" href="#" id="modifyAccount" data-toggle="modal"
+                            <li><a class="my-account" href="javascript:;" id="modifyAccount" data-toggle="modal"
                                    data-target="#myModal5">我的账户</a></li>
-                            <li><a class="my-wishlist" href="#">My Wishlist</a></li>
-                            <li><a class="login" href="#">${sessionScope.user==null?'登陆/注册':user.name}</a></li>
+                            <li><a class="my-wishlist" href="javascript:;">My Wishlist</a></li>
+                            <li><a class="login" href="javascript:;">${sessionScope.user==null?'登陆/注册':user.name}</a></li>
                         </ul>
                         <div class="currency language">
                             <div class="current">
@@ -61,8 +61,8 @@
                             </div>
                             <ul class="lang">
                                 <li class="selected"><span class="dollar">Dollar</span></li>
-                                <li><a href="#" title=""><span class="euro">Euro</span></a></li>
-                                <li><a href="#" title=""><span class="sheqel">Sheqel</span></a></li>
+                                <li><a href="javascript:;" title=""><span class="euro">Euro</span></a></li>
+                                <li><a href="javascript:;" title=""><span class="sheqel">Sheqel</span></a></li>
                             </ul>
                         </div>
                         <div class="language">
@@ -74,22 +74,22 @@
                                         src="${pageContext.request.contextPath}/resources/img/lang/1.jpg"
                                         alt="en"/><span>English</span></li>
                                 <li><img src="${pageContext.request.contextPath}/resources/img/lang/2.jpg" alt="ar"/><a
-                                        href="#" title=""><span>اللغة العربية</span></a>
+                                        href="javascript:;" title=""><span>اللغة العربية</span></a>
                                 </li>
                                 <li><img src="${pageContext.request.contextPath}/resources/img/lang/7.jpg" alt="hb"/><a
-                                        href="#" title=""><span>עִברִית</span></a>
+                                        href="javascript:;" title=""><span>עִברִית</span></a>
                                 </li>
                                 <li><img src="${pageContext.request.contextPath}/resources/img/lang/3.jpg" alt="es"/><a
-                                        href="#" title=""><span>Español</span></a>
+                                        href="javascript:;" title=""><span>Español</span></a>
                                 </li>
                                 <li><img src="${pageContext.request.contextPath}/resources/img/lang/4.jpg" alt="ph"/><a
-                                        href="#" title=""><span>Pilipino</span></a>
+                                        href="javascript:;" title=""><span>Pilipino</span></a>
                                 </li>
                                 <li><img src="${pageContext.request.contextPath}/resources/img/lang/5.jpg" alt="fr"/><a
-                                        href="#" title=""><span>français</span></a>
+                                        href="javascript:;" title=""><span>français</span></a>
                                 </li>
                                 <li><img src="${pageContext.request.contextPath}/resources/img/lang/6.jpg" alt="sd"/><a
-                                        href="#" title=""><span>svensk</span></a>
+                                        href="javascript:;" title=""><span>svensk</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -118,7 +118,7 @@
                 </div>
                 <div class="col-md-3 col-xs-4 col-sm-6">
                     <div class="shopping-cart">
-                        <a class="cart" href="#" title="view shopping cart"><span class="hidden-xs">shopping cart <br><small
+                        <a class="cart" href="javascript:;" title="view shopping cart"><span class="hidden-xs">shopping cart <br><small
                                 id="conditionInCart">0 item(s) - £0.00</small></span></a>
                         <div class="top-cart-content" id="cart-content">
                             <%--   --%>
@@ -128,7 +128,7 @@
                                 <span><b id="cartTotalAmountB">£ 0.00</b></span>
                             </div>
                             <div class="checkout">
-                                <a href="#"><span>checkout<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span></a>
+                                <a href="javascript:;"><span>checkout<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span></a>
                             </div>
                         </div>
                     </div>
@@ -198,7 +198,7 @@
                         <h3>Save Your Time and Money</h3>
                     </div>
                     <div class="cap-readmore wow bounceInUp" data-wow-duration="1.3s" data-wow-delay=".5s">
-                        <a href="#">Shop Now</a>
+                        <a href="javascript:;">Shop Now</a>
                     </div>
                 </div>
             </div>
@@ -215,7 +215,7 @@
                         <h3>Save Your Time and Money</h3>
                     </div>
                     <div class="cap-readmore wow bounceInUp" data-wow-duration="1.3s" data-wow-delay=".5s">
-                        <a href="#">Shop Now</a>
+                        <a href="javascript:;">Shop Now</a>
                     </div>
                 </div>
             </div>
@@ -229,21 +229,21 @@
         <div class="row">
             <div class="col-md-4 col-xs-12">
                 <div class="single-banner wow fadeIn" data-wow-duration=".5s" data-wow-delay=".5s">
-                    <a href="#">
+                    <a href="javascript:;">
                         <img src="${pageContext.request.contextPath}/resources/img/banner/2.png" alt=""/>
                     </a>
                 </div>
             </div>
             <div class="col-md-4 col-xs-12">
                 <div class="single-banner wow fadeIn" data-wow-duration=".5s" data-wow-delay=".5s">
-                    <a href="#">
+                    <a href="javascript:;">
                         <img src="${pageContext.request.contextPath}/resources/img/banner/3.png" alt=""/>
                     </a>
                 </div>
             </div>
             <div class="col-md-4 col-xs-12">
                 <div class="single-banner wow fadeIn" data-wow-duration=".5s" data-wow-delay=".5s">
-                    <a href="#">
+                    <a href="javascript:;">
                         <img src="${pageContext.request.contextPath}/resources/img/banner/1.png" alt=""/>
                     </a>
                 </div>
@@ -293,7 +293,7 @@
                                                 <!-- single-product-start -->
                                                 <div class="single-product">
                                                     <div class="single-product-img">
-                                                        <a href="#"><img
+                                                        <a href="javascript:;"><img
                                                                 src="${pageContext.request.contextPath}/resources/img/singlepro/${category.name}/${goodI.count}.jpg"
                                                                 alt=""/></a>
                                                         <c:if test="${good.ifDiscount}">
@@ -309,7 +309,7 @@
                                                     </div>
                                                     <div class="single-product-content">
                                                         <div class="product-title">
-                                                            <h5><a href="#">${good.name}</a></h5>
+                                                            <h5><a href="javascript:;">${good.name}</a></h5>
                                                         </div>
                                                         <div class="rating">
                                                             <div class="star star-on"></div>
@@ -334,9 +334,9 @@
                                                                     onclick="addCart(${good.id},1,false)">Add
                                                                 to cart
                                                             </button>
-                                                            <a class="add-wishlist" href="#" title="add to wishlist"><i
+                                                            <a class="add-wishlist" href="javascript:;" title="add to wishlist"><i
                                                                     class="fa fa-heart"></i></a>
-                                                            <a class="quick-view" href="#" title="quick view"
+                                                            <a class="quick-view" href="javascript:;" title="quick view"
                                                                data-toggle="modal" data-target="#myModal"
                                                                onclick="goodDetail(${good.id})"><i
                                                                     class="fa fa-search"></i></a>
@@ -378,7 +378,7 @@
                                     <!-- single-product-start -->
                                     <div class="single-product">
                                         <div class="single-product-img">
-                                            <a href="#"><img
+                                            <a href="javascript:;"><img
                                                     src="${pageContext.request.contextPath}/resources/img/singlepro/${good.category.name}/${goodI.count}.jpg"
                                                     alt=""/></a>
                                             <c:if test="${good.ifDiscount}">
@@ -394,7 +394,7 @@
                                         </div>
                                         <div class="single-product-content">
                                             <div class="product-title">
-                                                <h5><a href="#">${good.name}</a></h5>
+                                                <h5><a href="javascript:;">${good.name}</a></h5>
                                             </div>
                                             <div class="rating">
                                                 <div class="star star-on"></div>
@@ -416,9 +416,9 @@
                                             <div class="product-action">
                                                 <button class="btn btn-default add-cart" title="add to cart">Add to cart
                                                 </button>
-                                                <a class="add-wishlist" href="#" title="add to wishlist"><i
+                                                <a class="add-wishlist" href="javascript:;" title="add to wishlist"><i
                                                         class="fa fa-heart"></i></a>
-                                                <a class="quick-view" href="#" title="quick view" data-toggle="modal"
+                                                <a class="quick-view" href="javascript:;" title="quick view" data-toggle="modal"
                                                    data-target="#myModal"
                                                    onclick="goodDetail(${good.id})"><i
                                                         class="fa fa-search"></i></a>
@@ -447,14 +447,14 @@
                             <!-- single-new-product-start -->
                             <div class="single-new-product">
                                 <div class="product-img">
-                                    <a href="#"><img
+                                    <a href="javascript:;"><img
                                             src="${pageContext.request.contextPath}/resources/img/singlepro/41.jpg"
                                             alt=""/></a>
                                 </div>
                                 <div class="product-details">
                                     <div class="single-product-content">
                                         <div class="product-title">
-                                            <h5><a href="#">consectetuer</a></h5>
+                                            <h5><a href="javascript:;">consectetuer</a></h5>
                                         </div>
                                         <div class="rating">
                                             <div class="star star-on"></div>
@@ -478,14 +478,14 @@
                             <!-- single-new-product-start -->
                             <div class="single-new-product">
                                 <div class="product-img">
-                                    <a href="#"><img
+                                    <a href="javascript:;"><img
                                             src="${pageContext.request.contextPath}/resources/img/singlepro/4.jpg"
                                             alt=""/></a>
                                 </div>
                                 <div class="product-details">
                                     <div class="single-product-content">
                                         <div class="product-title">
-                                            <h5><a href="#">consectetuer</a></h5>
+                                            <h5><a href="javascript:;">consectetuer</a></h5>
                                         </div>
                                         <div class="rating">
                                             <div class="star star-on"></div>
@@ -509,14 +509,14 @@
                             <!-- single-new-product-start -->
                             <div class="single-new-product">
                                 <div class="product-img">
-                                    <a href="#"><img
+                                    <a href="javascript:;"><img
                                             src="${pageContext.request.contextPath}/resources/img/singlepro/7.jpg"
                                             alt=""/></a>
                                 </div>
                                 <div class="product-details">
                                     <div class="single-product-content">
                                         <div class="product-title">
-                                            <h5><a href="#">consectetuer</a></h5>
+                                            <h5><a href="javascript:;">consectetuer</a></h5>
                                         </div>
                                         <div class="rating">
                                             <div class="star star-on"></div>
@@ -547,14 +547,14 @@
                             <!-- single-new-product-start -->
                             <div class="single-new-product">
                                 <div class="product-img">
-                                    <a href="#"><img
+                                    <a href="javascript:;"><img
                                             src="${pageContext.request.contextPath}/resources/img/singlepro/6.jpg"
                                             alt=""/></a>
                                 </div>
                                 <div class="product-details">
                                     <div class="single-product-content">
                                         <div class="product-title">
-                                            <h5><a href="#">consectetuer</a></h5>
+                                            <h5><a href="javascript:;">consectetuer</a></h5>
                                         </div>
                                         <div class="rating">
                                             <div class="star star-on"></div>
@@ -578,14 +578,14 @@
                             <!-- single-new-product-start -->
                             <div class="single-new-product">
                                 <div class="product-img">
-                                    <a href="#"><img
+                                    <a href="javascript:;"><img
                                             src="${pageContext.request.contextPath}/resources/img/singlepro/43.jpg"
                                             alt=""/></a>
                                 </div>
                                 <div class="product-details">
                                     <div class="single-product-content">
                                         <div class="product-title">
-                                            <h5><a href="#">consectetuer</a></h5>
+                                            <h5><a href="javascript:;">consectetuer</a></h5>
                                         </div>
                                         <div class="rating">
                                             <div class="star star-on"></div>
@@ -609,14 +609,14 @@
                             <!-- single-new-product-start -->
                             <div class="single-new-product">
                                 <div class="product-img">
-                                    <a href="#"><img
+                                    <a href="javascript:;"><img
                                             src="${pageContext.request.contextPath}/resources/img/singlepro/10.jpg"
                                             alt=""/></a>
                                 </div>
                                 <div class="product-details">
                                     <div class="single-product-content">
                                         <div class="product-title">
-                                            <h5><a href="#">consectetuer</a></h5>
+                                            <h5><a href="javascript:;">consectetuer</a></h5>
                                         </div>
                                         <div class="rating">
                                             <div class="star"></div>
@@ -647,14 +647,14 @@
                             <!-- single-new-product-start -->
                             <div class="single-new-product">
                                 <div class="product-img">
-                                    <a href="#"><img
+                                    <a href="javascript:;"><img
                                             src="${pageContext.request.contextPath}/resources/img/singlepro/11.jpg"
                                             alt=""/></a>
                                 </div>
                                 <div class="product-details">
                                     <div class="single-product-content">
                                         <div class="product-title">
-                                            <h5><a href="#">consectetuer</a></h5>
+                                            <h5><a href="javascript:;">consectetuer</a></h5>
                                         </div>
                                         <div class="rating">
                                             <div class="star star-on"></div>
@@ -678,14 +678,14 @@
                             <!-- single-new-product-start -->
                             <div class="single-new-product">
                                 <div class="product-img">
-                                    <a href="#"><img
+                                    <a href="javascript:;"><img
                                             src="${pageContext.request.contextPath}/resources/img/singlepro/3.jpg"
                                             alt=""/></a>
                                 </div>
                                 <div class="product-details">
                                     <div class="single-product-content">
                                         <div class="product-title">
-                                            <h5><a href="#">consectetuer</a></h5>
+                                            <h5><a href="javascript:;">consectetuer</a></h5>
                                         </div>
                                         <div class="rating">
                                             <div class="star star-on"></div>
@@ -709,14 +709,14 @@
                             <!-- single-new-product-start -->
                             <div class="single-new-product">
                                 <div class="product-img">
-                                    <a href="#"><img
+                                    <a href="javascript:;"><img
                                             src="${pageContext.request.contextPath}/resources/img/singlepro/2.jpg"
                                             alt=""/></a>
                                 </div>
                                 <div class="product-details">
                                     <div class="single-product-content">
                                         <div class="product-title">
-                                            <h5><a href="#">consectetuer</a></h5>
+                                            <h5><a href="javascript:;">consectetuer</a></h5>
                                         </div>
                                         <div class="rating">
                                             <div class="star star-on"></div>
@@ -750,13 +750,13 @@
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="single-banner wow fadeIn" data-wow-duration=".5s" data-wow-delay=".5s">
-                        <a href="#"><img src="${pageContext.request.contextPath}/resources/img/banner/11.jpg"
+                        <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/banner/11.jpg"
                                          alt=""/></a>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="single-banner wow fadeIn" data-wow-duration=".5s" data-wow-delay=".5s">
-                        <a href="#"><img src="${pageContext.request.contextPath}/resources/img/banner/12.jpg"
+                        <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/banner/12.jpg"
                                          alt=""/></a>
                     </div>
                 </div>
@@ -776,7 +776,7 @@
                                     <!-- single-product-start -->
                                     <div class="single-product">
                                         <div class="single-product-img">
-                                            <a href="#"><img
+                                            <a href="javascript:;"><img
                                                     src="${pageContext.request.contextPath}/resources/img/singlepro/11.jpg"
                                                     alt=""/></a>
                                             <span class="discount-box">-12%</span>
@@ -787,7 +787,7 @@
                                         </div>
                                         <div class="single-product-content">
                                             <div class="product-title">
-                                                <h5><a href="#">consectetuer</a></h5>
+                                                <h5><a href="javascript:;">consectetuer</a></h5>
                                             </div>
                                             <div class="rating">
                                                 <div class="star star-on"></div>
@@ -804,9 +804,9 @@
                                                 <button class="btn btn-default add-cart" title="add to cart">Add to
                                                     cart
                                                 </button>
-                                                <a class="add-wishlist" href="#" title="add to wishlist"><i
+                                                <a class="add-wishlist" href="javascript:;" title="add to wishlist"><i
                                                         class="fa fa-heart"></i></a>
-                                                <a class="quick-view" href="#" title="quick view"
+                                                <a class="quick-view" href="javascript:;" title="quick view"
                                                    data-toggle="modal"
                                                    data-target="#myModal"><i class="fa fa-search"></i></a>
                                             </div>
@@ -818,7 +818,7 @@
                                     <!-- single-product-start -->
                                     <div class="single-product">
                                         <div class="single-product-img">
-                                            <a href="#"><img
+                                            <a href="javascript:;"><img
                                                     src="${pageContext.request.contextPath}/resources/img/singlepro/9.jpg"
                                                     alt=""/></a>
                                             <span class="discount-box">-8%</span>
@@ -829,7 +829,7 @@
                                         </div>
                                         <div class="single-product-content">
                                             <div class="product-title">
-                                                <h5><a href="#">consectetuer</a></h5>
+                                                <h5><a href="javascript:;">consectetuer</a></h5>
                                             </div>
                                             <div class="rating">
                                                 <div class="star star-on"></div>
@@ -846,9 +846,9 @@
                                                 <button class="btn btn-default add-cart" title="add to cart">Add to
                                                     cart
                                                 </button>
-                                                <a class="add-wishlist" href="#" title="add to wishlist"><i
+                                                <a class="add-wishlist" href="javascript:;" title="add to wishlist"><i
                                                         class="fa fa-heart"></i></a>
-                                                <a class="quick-view" href="#" title="quick view"
+                                                <a class="quick-view" href="javascript:;" title="quick view"
                                                    data-toggle="modal"
                                                    data-target="#myModal"><i class="fa fa-search"></i></a>
                                             </div>
@@ -875,7 +875,7 @@
                                     <!-- single-product-start -->
                                     <div class="single-product">
                                         <div class="single-product-img">
-                                            <a href="#"><img
+                                            <a href="javascript:;"><img
                                                     src="${pageContext.request.contextPath}/resources/img/singlepro/3.jpg"
                                                     alt=""/></a>
                                             <span class="sale-box">
@@ -884,7 +884,7 @@
                                         </div>
                                         <div class="single-product-content">
                                             <div class="product-title">
-                                                <h5><a href="#">consectetuer</a></h5>
+                                                <h5><a href="javascript:;">consectetuer</a></h5>
                                             </div>
                                             <div class="rating">
                                                 <div class="star star-on"></div>
@@ -901,9 +901,9 @@
                                                 <button class="btn btn-default add-cart" title="add to cart">Add to
                                                     cart
                                                 </button>
-                                                <a class="add-wishlist" href="#" title="add to wishlist"><i
+                                                <a class="add-wishlist" href="javascript:;" title="add to wishlist"><i
                                                         class="fa fa-heart"></i></a>
-                                                <a class="quick-view" href="#" title="quick view"
+                                                <a class="quick-view" href="javascript:;" title="quick view"
                                                    data-toggle="modal"
                                                    data-target="#myModal"><i class="fa fa-search"></i></a>
                                             </div>
@@ -915,7 +915,7 @@
                                     <!-- single-product-start -->
                                     <div class="single-product">
                                         <div class="single-product-img">
-                                            <a href="#"><img
+                                            <a href="javascript:;"><img
                                                     src="${pageContext.request.contextPath}/resources/img/singlepro/7.jpg"
                                                     alt=""/></a>
                                             <span class="sale-box">
@@ -924,7 +924,7 @@
                                         </div>
                                         <div class="single-product-content">
                                             <div class="product-title">
-                                                <h5><a href="#">Feugiat justo lacinia</a></h5>
+                                                <h5><a href="javascript:;">Feugiat justo lacinia</a></h5>
                                             </div>
                                             <div class="rating">
                                                 <div class="star"></div>
@@ -941,9 +941,9 @@
                                                 <button class="btn btn-default add-cart" title="add to cart">Add to
                                                     cart
                                                 </button>
-                                                <a class="add-wishlist" href="#" title="add to wishlist"><i
+                                                <a class="add-wishlist" href="javascript:;" title="add to wishlist"><i
                                                         class="fa fa-heart"></i></a>
-                                                <a class="quick-view" href="#" title="quick view"
+                                                <a class="quick-view" href="javascript:;" title="quick view"
                                                    data-toggle="modal"
                                                    data-target="#myModal"><i class="fa fa-search"></i></a>
                                             </div>
@@ -955,7 +955,7 @@
                                     <!-- single-product-start -->
                                     <div class="single-product">
                                         <div class="single-product-img">
-                                            <a href="#"><img
+                                            <a href="javascript:;"><img
                                                     src="${pageContext.request.contextPath}/resources/img/singlepro/11.jpg"
                                                     alt=""/></a>
                                             <span class="sale-box">
@@ -964,7 +964,7 @@
                                         </div>
                                         <div class="single-product-content">
                                             <div class="product-title">
-                                                <h5><a href="#">Fermentum dictum</a></h5>
+                                                <h5><a href="javascript:;">Fermentum dictum</a></h5>
                                             </div>
                                             <div class="rating">
                                                 <div class="star star-on"></div>
@@ -981,9 +981,9 @@
                                                 <button class="btn btn-default add-cart" title="add to cart">Add to
                                                     cart
                                                 </button>
-                                                <a class="add-wishlist" href="#" title="add to wishlist"><i
+                                                <a class="add-wishlist" href="javascript:;" title="add to wishlist"><i
                                                         class="fa fa-heart"></i></a>
-                                                <a class="quick-view" href="#" title="quick view"
+                                                <a class="quick-view" href="javascript:;" title="quick view"
                                                    data-toggle="modal"
                                                    data-target="#myModal"><i class="fa fa-search"></i></a>
                                             </div>
@@ -995,7 +995,7 @@
                                     <!-- single-product-start -->
                                     <div class="single-product">
                                         <div class="single-product-img">
-                                            <a href="#"><img
+                                            <a href="javascript:;"><img
                                                     src="${pageContext.request.contextPath}/resources/img/singlepro/12.jpg"
                                                     alt=""/></a>
                                             <span class="sale-box">
@@ -1004,7 +1004,7 @@
                                         </div>
                                         <div class="single-product-content">
                                             <div class="product-title">
-                                                <h5><a href="#">Dictum</a></h5>
+                                                <h5><a href="javascript:;">Dictum</a></h5>
                                             </div>
                                             <div class="rating">
                                                 <div class="star star-on"></div>
@@ -1021,9 +1021,9 @@
                                                 <button class="btn btn-default add-cart" title="add to cart">Add to
                                                     cart
                                                 </button>
-                                                <a class="add-wishlist" href="#" title="add to wishlist"><i
+                                                <a class="add-wishlist" href="javascript:;" title="add to wishlist"><i
                                                         class="fa fa-heart"></i></a>
-                                                <a class="quick-view" href="#" title="quick view"
+                                                <a class="quick-view" href="javascript:;" title="quick view"
                                                    data-toggle="modal"
                                                    data-target="#myModal"><i class="fa fa-search"></i></a>
                                             </div>
@@ -1035,7 +1035,7 @@
                                     <!-- single-product-start -->
                                     <div class="single-product">
                                         <div class="single-product-img">
-                                            <a href="#"><img
+                                            <a href="javascript:;"><img
                                                     src="${pageContext.request.contextPath}/resources/img/singlepro/5.jpg"
                                                     alt=""/></a>
                                             <span class="sale-box">
@@ -1044,7 +1044,7 @@
                                         </div>
                                         <div class="single-product-content">
                                             <div class="product-title">
-                                                <h5><a href="#">Feugiat justo lacinia</a></h5>
+                                                <h5><a href="javascript:;">Feugiat justo lacinia</a></h5>
                                             </div>
                                             <div class="rating">
                                                 <div class="star"></div>
@@ -1061,9 +1061,9 @@
                                                 <button class="btn btn-default add-cart" title="add to cart">Add to
                                                     cart
                                                 </button>
-                                                <a class="add-wishlist" href="#" title="add to wishlist"><i
+                                                <a class="add-wishlist" href="javascript:;" title="add to wishlist"><i
                                                         class="fa fa-heart"></i></a>
-                                                <a class="quick-view" href="#" title="quick view"
+                                                <a class="quick-view" href="javascript:;" title="quick view"
                                                    data-toggle="modal"
                                                    data-target="#myModal"><i class="fa fa-search"></i></a>
                                             </div>
@@ -1159,13 +1159,13 @@
                         <div class="col-md-12">
                             <div class="single-blog">
                                 <div class="blog-img">
-                                    <a href="#"><img src="${pageContext.request.contextPath}/resources/img/blog/1.jpg"
+                                    <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/blog/1.jpg"
                                                      alt=""/></a>
                                 </div>
                                 <div class="blog-content">
-                                    <h3><a href="#">Lorem Ipsum</a></h3>
+                                    <h3><a href="javascript:;">Lorem Ipsum</a></h3>
                                     <div class="meta">
-                                            <span class="post-category">in <a href="#">Uncategorized</a>
+                                            <span class="post-category">in <a href="javascript:;">Uncategorized</a>
                                                 </span>
                                         <span class="meta-border">|</span>
                                         <span class="time"><i class="fa fa-clock-o"></i>Nov 11, 2018</span>
@@ -1180,13 +1180,13 @@
                         <div class="col-md-12">
                             <div class="single-blog">
                                 <div class="blog-img">
-                                    <a href="#"><img src="${pageContext.request.contextPath}/resources/img/blog/2.jpg"
+                                    <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/blog/2.jpg"
                                                      alt=""/></a>
                                 </div>
                                 <div class="blog-content">
-                                    <h3><a href="#">Lorem Ipsum</a></h3>
+                                    <h3><a href="javascript:;">Lorem Ipsum</a></h3>
                                     <div class="meta">
-                                        <span class="post-category">in <a href="#">Uncategorized</a></span>
+                                        <span class="post-category">in <a href="javascript:;">Uncategorized</a></span>
                                         <span class="meta-border">|</span>
                                         <span class="time"><i class="fa fa-clock-o"></i>Dec 01, 2018</span>
                                     </div>
@@ -1200,13 +1200,13 @@
                         <div class="col-md-12">
                             <div class="single-blog">
                                 <div class="blog-img">
-                                    <a href="#"><img src="${pageContext.request.contextPath}/resources/img/blog/3.jpg"
+                                    <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/blog/3.jpg"
                                                      alt=""/></a>
                                 </div>
                                 <div class="blog-content">
-                                    <h3><a href="#">Lorem Ipsum</a></h3>
+                                    <h3><a href="javascript:;">Lorem Ipsum</a></h3>
                                     <div class="meta">
-                                        <span class="post-category">in <a href="#">Uncategorized</a></span>
+                                        <span class="post-category">in <a href="javascript:;">Uncategorized</a></span>
                                         <span class="meta-border">|</span>
                                         <span class="time"><i class="fa fa-clock-o"></i>Dec 23, 2018</span>
                                     </div>
@@ -1220,13 +1220,13 @@
                         <div class="col-md-12">
                             <div class="single-blog">
                                 <div class="blog-img">
-                                    <a href="#"><img src="${pageContext.request.contextPath}/resources/img/blog/4.jpg"
+                                    <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/blog/4.jpg"
                                                      alt=""/></a>
                                 </div>
                                 <div class="blog-content">
-                                    <h3><a href="#">Lorem Ipsum</a></h3>
+                                    <h3><a href="javascript:;">Lorem Ipsum</a></h3>
                                     <div class="meta">
-                                        <span class="post-category">in <a href="#">Uncategorized</a></span>
+                                        <span class="post-category">in <a href="javascript:;">Uncategorized</a></span>
                                         <span class="meta-border">|</span>
                                         <span class="time"><i class="fa fa-clock-o"></i>Nov 16, 2016</span>
                                     </div>
@@ -1258,49 +1258,49 @@
                     <div class="brand-carousel">
                         <div class="col-md-12">
                             <div class="single-brand">
-                                <a href="#"><img src="${pageContext.request.contextPath}/resources/img/brand/1.png"
+                                <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/brand/1.png"
                                                  alt=""/></a>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="single-brand">
-                                <a href="#"><img src="${pageContext.request.contextPath}/resources/img/brand/1.png"
+                                <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/brand/1.png"
                                                  alt=""/></a>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="single-brand">
-                                <a href="#"><img src="${pageContext.request.contextPath}/resources/img/brand/1.png"
+                                <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/brand/1.png"
                                                  alt=""/></a>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="single-brand">
-                                <a href="#"><img src="${pageContext.request.contextPath}/resources/img/brand/1.png"
+                                <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/brand/1.png"
                                                  alt=""/></a>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="single-brand">
-                                <a href="#"><img src="${pageContext.request.contextPath}/resources/img/brand/1.png"
+                                <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/brand/1.png"
                                                  alt=""/></a>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="single-brand">
-                                <a href="#"><img src="${pageContext.request.contextPath}/resources/img/brand/1.png"
+                                <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/brand/1.png"
                                                  alt=""/></a>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="single-brand">
-                                <a href="#"><img src="${pageContext.request.contextPath}/resources/img/brand/1.png"
+                                <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/brand/1.png"
                                                  alt=""/></a>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="single-brand">
-                                <a href="#"><img src="${pageContext.request.contextPath}/resources/img/brand/1.png"
+                                <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/brand/1.png"
                                                  alt=""/></a>
                             </div>
                         </div>
@@ -1321,31 +1321,31 @@
                                 <div class="col-md-3 col-sm-3 col-xs-12">
                                     <h4>Information</h4>
                                     <ul class="toggle-footer">
-                                        <li><a title="Specials" href="#">Specials</a></li>
-                                        <li><a title="New products" href="#">New products</a></li>
-                                        <li><a title="Best sellers" href="#">Best sellers</a></li>
-                                        <li><a title="Our stores" href="#">Our stores</a></li>
-                                        <li><a title="Contact us" href="#">Contact us</a></li>
-                                        <li><a title="Sitemap" href="#">Sitemap</a></li>
+                                        <li><a title="Specials" href="javascript:;">Specials</a></li>
+                                        <li><a title="New products" href="javascript:;">New products</a></li>
+                                        <li><a title="Best sellers" href="javascript:;">Best sellers</a></li>
+                                        <li><a title="Our stores" href="javascript:;">Our stores</a></li>
+                                        <li><a title="Contact us" href="javascript:;">Contact us</a></li>
+                                        <li><a title="Sitemap" href="javascript:;">Sitemap</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-md-3 col-sm-3 col-xs-12">
                                     <h4>My account</h4>
                                     <ul class="toggle-footer">
-                                        <li><a title="My orders" href="#">My orders</a></li>
-                                        <li><a title="My credit slips" href="#"> My credit slips</a></li>
-                                        <li><a title="My addresses" href="#">My addresses</a></li>
-                                        <li><a title="My personal info" href="#">My personal info</a></li>
+                                        <li><a title="My orders" href="javascript:;">My orders</a></li>
+                                        <li><a title="My credit slips" href="javascript:;"> My credit slips</a></li>
+                                        <li><a title="My addresses" href="javascript:;">My addresses</a></li>
+                                        <li><a title="My personal info" href="javascript:;">My personal info</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-md-3 col-sm-3 col-xs-12">
                                     <h4>category</h4>
                                     <ul class="toggle-footer">
-                                        <li><a title="My orders" href="#">women</a></li>
-                                        <li><a title="My credit slips" href="#">men</a></li>
-                                        <li><a title="My addresses" href="#">category</a></li>
-                                        <li><a title="My personal info" href="#">equipment</a></li>
-                                        <li><a title="My personal info" href="#">watch</a></li>
+                                        <li><a title="My orders" href="javascript:;">women</a></li>
+                                        <li><a title="My credit slips" href="javascript:;">men</a></li>
+                                        <li><a title="My addresses" href="javascript:;">category</a></li>
+                                        <li><a title="My personal info" href="javascript:;">equipment</a></li>
+                                        <li><a title="My personal info" href="javascript:;">watch</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-md-3  col-sm-3 col-xs-12">
@@ -1362,7 +1362,7 @@
                                             <span> 01234-567890</span>
                                         </p>
                                         <p class="email add">
-                                            <a href="#">admin@admin.com</a>
+                                            <a href="javascript:;">admin@admin.com</a>
                                         </p>
                                     </div>
                                 </div>
@@ -1370,7 +1370,7 @@
                         </div>
                     </div>
                     <div class="payment">
-                        <a href="#"><img src="${pageContext.request.contextPath}/resources/img/payment.png" alt=""/></a>
+                        <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/payment.png" alt=""/></a>
                     </div>
                 </div>
             </div>
@@ -1379,10 +1379,10 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-12 col-xs-12 footer-link">
                             <ul>
-                                <li><a href="#">Customer Service</a></li>
-                                <li><a href="#">Secure payment</a></li>
-                                <li><a href="#">Term of Use</a></li>
-                                <li><a href="#">About us</a></li>
+                                <li><a href="javascript:;">Customer Service</a></li>
+                                <li><a href="javascript:;">Secure payment</a></li>
+                                <li><a href="javascript:;">Term of Use</a></li>
+                                <li><a href="javascript:;">About us</a></li>
                             </ul>
                         </div>
                         <div class="col-md-6 col-sm-12 col-xs-12 address">
@@ -1436,7 +1436,7 @@
                                                 <!-- single-product-start -->
                                                 <div class="single-product">
                                                     <div class="single-product-img">
-                                                        <a href="#"><img
+                                                        <a href="javascript:;"><img
                                                                 src="${pageContext.request.contextPath}/resources/img/singlepro/21.jpg"
                                                                 alt=""/></a>
                                                         <span class="sale-box">
@@ -1453,7 +1453,7 @@
                                                 <!-- single-product-start -->
                                                 <div class="single-product">
                                                     <div class="single-product-img">
-                                                        <a href="#"><img
+                                                        <a href="javascript:;"><img
                                                                 src="${pageContext.request.contextPath}/resources/img/singlepro/22.jpg"
                                                                 alt=""/></a>
                                                         <span class="sale-box">
@@ -1470,7 +1470,7 @@
                                                 <!-- single-product-start -->
                                                 <div class="single-product">
                                                     <div class="single-product-img">
-                                                        <a href="#"><img
+                                                        <a href="javascript:;"><img
                                                                 src="${pageContext.request.contextPath}/resources/img/singlepro/23.jpg"
                                                                 alt=""/></a>
                                                         <span class="sale-box">
@@ -1487,7 +1487,7 @@
                                                 <!-- single-product-start -->
                                                 <div class="single-product">
                                                     <div class="single-product-img">
-                                                        <a href="#"><img
+                                                        <a href="javascript:;"><img
                                                                 src="${pageContext.request.contextPath}/resources/img/singlepro/24.jpg"
                                                                 alt=""/></a>
                                                         <span class="sale-box">
@@ -1532,10 +1532,10 @@
                                             </div>
                                         </div>
                                         <div class="widget-icon">
-                                            <a href="#"><i class="fa fa-facebook"></i></a>
-                                            <a href="#"><i class="fa fa-twitter"></i></a>
-                                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                                            <a href="javascript:;"><i class="fa fa-facebook"></i></a>
+                                            <a href="javascript:;"><i class="fa fa-twitter"></i></a>
+                                            <a href="javascript:;"><i class="fa fa-linkedin"></i></a>
+                                            <a href="javascript:;"><i class="fa fa-google-plus"></i></a>
                                         </div>
                                     </div>
                                 </div>

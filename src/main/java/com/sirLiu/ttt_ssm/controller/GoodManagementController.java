@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * @Author sirLiu
@@ -52,13 +53,76 @@ public class GoodManagementController {
 
     @RequestMapping(value = "/getGoodsWithFilter")
     @ResponseBody
-    public String getGoodsWithFilter(@RequestParam(value = "goodCategories",required = false) String goodCategoriyNamesAsString) {
-        String[] goodCategoriyNames = goodCategoriyNamesAsString.split(",");
-        List<TttGoodsinfo> selectedGoods = goodManagementService.getGoodsFilterByGoodCategories(goodCategoriyNames);
-        List<GoodsInfoJson> selectedGoodsInfoJsons = new ArrayList<>();
+    public String getGoodsWithFilter(@RequestParam(value = "goodCategories", required = false) String goodCategoriyNamesAsString,
+                                     @RequestParam(value = "goodPriceRange", required = false) String goodPriceRangeAsString,
+                                     @RequestParam(value = "goodIfNew", required = false) Boolean goodIfNew,
+                                     @RequestParam(value = "goodIfDiscount", required = false) Boolean goodIfDiscount,
+                                     @RequestParam(value = "goodStockDivisionWith100 ", required = false) Boolean goodStockOver100) {
+
+        List<TttGoodsinfo> selectedGoods = goodManagementService.getAllGoods();
+        List<GoodsInfoJson> selectedGoodsInfoJsons = new CopyOnWriteArrayList<>();
         for (TttGoodsinfo goodsinfo : selectedGoods) {
             selectedGoodsInfoJsons.add(goodManagementService.convertGoodInfoToJson(goodsinfo));
         }
+
+        if (goodCategoriyNamesAsString != null) {
+            String[] goodCategoriyNames = goodCategoriyNamesAsString.split(",");
+            if (goodCategoriyNames.length != 0) {
+                tabForGoodCategoryNames:
+                for (GoodsInfoJson goodsInfoJson : selectedGoodsInfoJsons) {
+                    for (String selectedCategoryName : goodCategoriyNames) {
+                        if (goodsInfoJson.getCategory().getName().equals(selectedCategoryName)) {
+                            continue tabForGoodCategoryNames;
+                        }
+                    }
+                    selectedGoodsInfoJsons.remove(goodsInfoJson);
+                }
+            }
+        }
+
+        if (goodPriceRangeAsString != null) {
+            String[] goodPriceRanges = goodPriceRangeAsString.split(",");
+            if (goodPriceRanges.length != 0) {
+                for (GoodsInfoJson goodsInfoJson : selectedGoodsInfoJsons) {
+                    if (goodsInfoJson.getPrice() < Integer.parseInt(goodPriceRanges[0]) || goodsInfoJson.getPrice() > Integer.parseInt(goodPriceRanges[1])) {
+                        selectedGoodsInfoJsons.remove(goodsInfoJson);
+                    }
+                }
+            }
+        }
+
+        if (goodIfNew != null) {
+            for (GoodsInfoJson goodsInfoJson : selectedGoodsInfoJsons) {
+                if (goodsInfoJson.getIfNew() != goodIfNew) {
+                    selectedGoodsInfoJsons.remove(goodsInfoJson);
+                }
+            }
+        }
+
+        if (goodIfDiscount != null) {
+            for (GoodsInfoJson goodsInfoJson : selectedGoodsInfoJsons) {
+                if (goodsInfoJson.getIfDiscount() != goodIfDiscount) {
+                    selectedGoodsInfoJsons.remove(goodsInfoJson);
+                }
+            }
+        }
+
+        if (goodStockOver100 != null) {
+            if (goodStockOver100) {
+                for (GoodsInfoJson goodsInfoJson : selectedGoodsInfoJsons) {
+                    if (goodsInfoJson.getStock() < 100) {
+                        selectedGoodsInfoJsons.remove(goodsInfoJson);
+                    }
+                }
+            } else {
+                for (GoodsInfoJson goodsInfoJson : selectedGoodsInfoJsons) {
+                    if (goodsInfoJson.getStock() > 100) {
+                        selectedGoodsInfoJsons.remove(goodsInfoJson);
+                    }
+                }
+            }
+        }
+
         return Msg.success().add("selectedGoods", selectedGoodsInfoJsons).toString();
     }
 

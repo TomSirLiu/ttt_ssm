@@ -13,7 +13,7 @@ $(function () {
         function (data) {
             var goodCategories = JSON.parse(data).goodCategories;
             $.each(goodCategories, function (i, goodCategory) {
-                var content = '<li> <span class="checkit"> <input class="checkbox" type="checkbox"/> </span> <label class="check-label"> <a href="#">' + goodCategory.name + '</a> </label></li>';
+                var content = '<li> <span class="checkit"> <input class="checkbox" type="checkbox"/> </span> <label class="check-label"> <a href="javascript:;">' + goodCategory.name + '</a> </label></li>';
                 $("#ulForCategories").append(content);
             });
         }
@@ -36,35 +36,75 @@ $(function () {
  * 商品显示过滤条件
  */
 function goodFilter() {
+    //过滤参数
+    var goodFilterData = {};
+    //过滤详细参数
     var selectedCategories = [];
+    var goodPriceRanges;
+    var selectedGoodIfNew = null;
+    var selectedGoodIfDiscount = null;
+    var selectedGoodIfStockOver100 = null;
+    //商品类别过滤
     $("#ulForCategories").find("input:checked").parents("li").find("a").each(function (index, object) {
         selectedCategories.push($(object).text());
     });
-    if (selectedCategories.length === 0) {
-        $.get({
-                url: "/ttt_ssm/good/getAllGoods",
-                async: false,
-                success: function (data) {
-                    data = JSON.parse(data);
-                    console.log(data);
-                    goods = data.goods;
-                }
-            }
-        );
-    } else {
-        $.get({
-                contentType: "application/json",
-                url: "/ttt_ssm/good/getGoodsWithFilter",
-                data: {goodCategories: selectedCategories.join(",")},
-                success: function (data) {
-                    goods = JSON.parse(data).selectedGoods;
-                    console.log(goods);
-                    quantityOfGoodsPage(sizeOfEachPage);
-                    showGoodsInView(currentPage, sizeOfEachPage);
-                }
-            }
-        );
+    if (selectedCategories.length !== 0) {
+        goodFilterData.goodCategories = selectedCategories.join(",");
     }
+    //商品价格区间过滤
+    var selectedGoodRangesTemp = $("#amount").val().match(/^£(\d+)\s-\s£(\d+)/);
+    goodPriceRanges = (selectedGoodRangesTemp[1] + "," + selectedGoodRangesTemp[2]);
+    goodFilterData.goodPriceRange = goodPriceRanges;
+    //商品是否为新品 过滤
+    if ($("#ulForGoodIfNew").find("input:checked").parents("li").find("a").length === 1) {
+        var temp = $("#ulForGoodIfNew").find("input:checked").parents("li").find("a").text();
+        if (temp === "yes") {
+            selectedGoodIfNew = true;
+        } else {
+            selectedGoodIfNew = false;
+        }
+        goodFilterData.goodIfNew = selectedGoodIfNew;
+    }
+    //商品是否为折扣商品 过滤
+    if ($("#ulForGoodIfDiscount").find("input:checked").parents("li").find("a").length === 1) {
+        var temp = $("#ulForGoodIfDiscount").find("input:checked").parents("li").find("a").text();
+        if (temp === "yes") {
+            selectedGoodIfDiscount = true;
+        } else {
+            selectedGoodIfDiscount = false;
+        }
+        goodFilterData.goodIfDiscount = selectedGoodIfDiscount;
+    }
+    //商品库存是否超过100 过滤
+    if ($("#ulForGoodIfOver100").find("input:checked").parents("li").find("a").length === 1) {
+        var temp = $("#ulForGoodIfDiscount").find("input:checked").parents("li").find("a").text();
+        if (temp === "more than 100") {
+            selectedGoodIfStockOver100 = true;
+        } else if (temp === "less than 100") {
+            selectedGoodIfStockOver100 = false;
+        }
+        goodFilterData.goodStockDivisionWith100 = selectedGoodIfStockOver100;
+    }
+
+    $.get({
+            contentType: "application/json",
+            url: "/ttt_ssm/good/getGoodsWithFilter",
+            data: {
+                goodCategories: goodFilterData["goodCategories"],
+                goodPriceRange: goodFilterData.goodPriceRange,
+                goodIfNew: goodFilterData.goodIfNew,
+                goodIfDiscount: goodFilterData.goodIfDiscount,
+                goodStockDivisionWith100: goodFilterData.goodStockDivisionWith100
+            },
+            success: function (data) {
+                goods = JSON.parse(data).selectedGoods;
+                console.log(goods);
+                quantityOfGoodsPage(sizeOfEachPage);
+                showGoodsInView(currentPage, sizeOfEachPage);
+            }
+        }
+    );
+    // }
 }
 
 /**
@@ -108,7 +148,7 @@ function showGoodsInView(page, size) {
             var content = '<div class="col-md-4 col-sm-6 col-xs-12 top-mar" style="height: 480px">' +
                 ' <div class="single-product">' +
                 ' <div class="single-product-img"> ' +
-                '<a href="#"><img src="' + projectName + '/resources/img/singlepro/' + good.category.name + '/' + good.id + '.jpg" alt=""/></a>';
+                '<a href="javascript:;"><img src="' + projectName + '/resources/img/singlepro/' + good.category.name + '/' + good.id + '.jpg" alt=""/></a>';
             if (good.ifNew) {
                 content += '<span class="new-box"> <span class="new">New</span> </span>';
             }
@@ -116,13 +156,13 @@ function showGoodsInView(page, size) {
                 content += '<span class="sale-box"> <span class="sale">Sale</span> </span>'
             }
             content += '</div> <div class="single-product-content"> <div class="product-title">' +
-                ' <h5> <a href="#">' + good.name + '</a> </h5> </div> <div class="rating"> <div class="star star-on"></div> <div class="star star-on"></div>' +
+                ' <h5> <a href="javascript:;">' + good.name + '</a> </h5> </div> <div class="rating"> <div class="star star-on"></div> <div class="star star-on"></div>' +
                 ' <div class="star star-on"></div> <div class="star star-on"></div> <div class="star star-on"></div> </div> <div class="price-box"> ' +
                 '<span class="price">£' + good.price.toFixed(2) + '</span> <span class="old-price">£' + (good.price * 1.2).toFixed(2) + '</span> </div> <div class="product-action"> ' +
                 '<button class="button btn btn-default add-cart"title="add to cart" onclick="addCart(' + good.id + ',1,false)">Add to cart </button> ' +
-                '<a class="add-wishlist" href="#" title="add to wishlist"> ' +
+                '<a class="add-wishlist" href="javascript:;" title="add to wishlist"> ' +
                 '<i class="fa fa-heart"></i> </a> ' +
-                '<a class="quick-view" href="#" title="quick view" data-toggle="modal" data-target="#myModal" onclick="goodDetail(' + good.id + ')"> ' +
+                '<a class="quick-view" href="javascript:;" title="quick view" data-toggle="modal" data-target="#myModal" onclick="goodDetail(' + good.id + ')"> ' +
                 '<i class="fa fa-search"></i> </a> </div> </div> </div></div> ';
             $("#gried_view").append(content);
         }
@@ -139,7 +179,7 @@ function showGoodsInView(page, size) {
                 '                                                            <!-- single-product-start -->\n' +
                 '                                                            <div class="single-product">\n' +
                 '                                                                <div class="single-product-img">\n' +
-                '                                                                    <a href="#">\n' +
+                '                                                                    <a href="javascript:;">\n' +
                 '                                                                        <img src="' + projectName + '/resources/img/singlepro/' + good.category.name + '/' + good.id + '.jpg"\n' +
                 '                                                                             alt=""/>\n' +
                 '                                                                    </a>';
@@ -159,7 +199,7 @@ function showGoodsInView(page, size) {
                 '                                                                <div class="single-product-content">\n' +
                 '                                                                    <div class="product-title">\n' +
                 '                                                                        <h5>\n' +
-                '                                                                            <a href="#">' + good.name + '</a>\n' +
+                '                                                                            <a href="javascript:;">' + good.name + '</a>\n' +
                 '                                                                        </h5>\n' +
                 '                                                                    </div>\n' +
                 '                                                                    <div class="rating">\n' +
@@ -179,11 +219,11 @@ function showGoodsInView(page, size) {
                 '                                                                        <button class="button btn btn-default add-cart"\n' +
                 '                                                                                title="add to cart"  onclick="addCart(' + good.id + ',1,false)">Add to cart\n' +
                 '                                                                        </button>\n' +
-                '                                                                        <a class="add-wishlist" href="#"\n' +
+                '                                                                        <a class="add-wishlist" href="javascript:;"\n' +
                 '                                                                           title="add to wishlist">\n' +
                 '                                                                            <i class="fa fa-heart"></i>\n' +
                 '                                                                        </a>\n' +
-                '                                                                        <a class="quick-view" href="#"\n' +
+                '                                                                        <a class="quick-view" href="javascript:;"\n' +
                 '                                                                           title="quick view" data-toggle="modal"\n' +
                 '                                                                           data-target="#myModal"  onclick="goodDetail(' + good.id + ')">\n' +
                 '                                                                            <i class="fa fa-search"></i>\n' +

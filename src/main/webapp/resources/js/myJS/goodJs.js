@@ -65,17 +65,17 @@ function addCart(goodId, goodQuantity, ifFirst) {
             goodId: goodId
         },
         function (data) {
-            let good = JSON.parse(data).good;
-            let cartId = parseInt(Math.random()*1000);
-            let content = '<div class="media header-middle-checkout" id="cart' + cartId + '">\n' +
+            var good = JSON.parse(data).good;
+            var cartId = parseInt(Math.random()*1000);
+            var content = '<div class="media header-middle-checkout" id="cart' + cartId + '">\n' +
                 '                                <div class="media-left check-img">\n' +
-                '                                    <a href="#"><img src="' + projectName + '/resources/img/cart/' + good.category.name + '/' + good.id + '.jpg"\n' +
+                '                                    <a href="javascript:;"><img src="' + projectName + '/resources/img/cart/' + good.category.name + '/' + good.id + '.jpg"\n' +
                 '                                                     alt=""/></a>\n' +
                 '                                </div>\n' +
                 '                                <div class="media-body checkout-content">\n' +
                 '                                    <h4 class="media-heading">\n' +
                 '                                        <span class="cart-count">' + goodQuantity + 'x</span>\n' +
-                '                                        <a href="#">' + good.name + '</a>\n' +
+                '                                        <a href="javascript:;">' + good.name + '</a>\n' +
                 '                                        <span class="btn-remove checkout-remove"\n' +
                 '                                              title="remove this product from my cart" onclick="removeCart(' + cartId + ',' + goodId + ',' + good.price + ',' + goodQuantity + ')"><i class="fa fa-times"\n' +
                 '                                                                                          aria-hidden="true"></i></span>\n' +
