@@ -55,25 +55,10 @@
                 <div class="col-md-6 col-xs-12 col-sm-12">
                     <div class="header-top-right">
                         <ul class="header-links hidden-xs">
-                            <li>
-                                <a class="my-account" href="javascript:;">
-                                    My Account
-                                </a>
-                            </li>
-                            <li>
-                                <a class="my-wishlist" href="javascript:;">
-                                    My Wishlist
-                                </a>
-                            </li>
-                            <li>
-                                <a class="checkout" href="javascript:;">
-                                    Checkout
-                                </a>
-                            </li>
-                            <li>
-                                <a class="login" href="javascript:;">
-                                    Login
-                                </a>
+                            <li><a class="my-account" href="javascript:;" id="modifyAccount" data-toggle="modal"
+                                   data-target="#myModal5">我的账户</a></li>
+                            <li><a class="my-wishlist" href="javascript:;">My Wishlist</a></li>
+                            <li><a class="login" href="javascript:;">${sessionScope.user==null?'登陆/注册':user.name}</a>
                             </li>
                         </ul>
                         <div class="currency language">
@@ -886,6 +871,7 @@
         </div>
     </div>
 </div>
+<jsp:include page="commen.jsp" />
 <!-- modal-end -->
 <!-- all js here -->
 <!-- jquery latest version -->
@@ -902,6 +888,8 @@
 <script src="${pageContext.request.contextPath}/resources/js/jquery.nivo.slider.pack.js"></script>
 <!-- jquery-ui.min.js -->
 <script src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
+<!-- jquery.form.js -->
+<script src="${pageContext.request.contextPath}/resources/js/jquery.form.js"></script>
 <!-- wow js -->
 <script src="${pageContext.request.contextPath}/resources/js/wow.min.js"></script>
 <!-- plugins js -->
@@ -910,6 +898,8 @@
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 <!-- base js -->
 <script src="${pageContext.request.contextPath}/resources/js/myJS/base.js"></script>
+<!-- user js -->
+<script src="${pageContext.request.contextPath}/resources/js/myJS/userJs.js"></script>
 <!-- goodJs js -->
 <script src="${pageContext.request.contextPath}/resources/js/myJS/goodJs.js"></script>
 <!-- shop js -->

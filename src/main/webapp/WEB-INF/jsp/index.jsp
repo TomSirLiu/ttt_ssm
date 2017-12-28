@@ -53,7 +53,8 @@
                             <li><a class="my-account" href="javascript:;" id="modifyAccount" data-toggle="modal"
                                    data-target="#myModal5">我的账户</a></li>
                             <li><a class="my-wishlist" href="javascript:;">My Wishlist</a></li>
-                            <li><a class="login" href="javascript:;">${sessionScope.user==null?'登陆/注册':user.name}</a></li>
+                            <li><a class="login" href="javascript:;">${sessionScope.user==null?'登陆/注册':user.name}</a>
+                            </li>
                         </ul>
                         <div class="currency language">
                             <div class="current">
@@ -128,7 +129,8 @@
                                 <span><b id="cartTotalAmountB">£ 0.00</b></span>
                             </div>
                             <div class="checkout">
-                                <a href="javascript:;"><span>checkout<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span></a>
+                                <a href="javascript:;"><span>checkout<i class="fa fa-arrow-circle-o-right"
+                                                                        aria-hidden="true"></i></span></a>
                             </div>
                         </div>
                     </div>
@@ -334,7 +336,8 @@
                                                                     onclick="addCart(${good.id},1,false)">Add
                                                                 to cart
                                                             </button>
-                                                            <a class="add-wishlist" href="javascript:;" title="add to wishlist"><i
+                                                            <a class="add-wishlist" href="javascript:;"
+                                                               title="add to wishlist"><i
                                                                     class="fa fa-heart"></i></a>
                                                             <a class="quick-view" href="javascript:;" title="quick view"
                                                                data-toggle="modal" data-target="#myModal"
@@ -418,7 +421,8 @@
                                                 </button>
                                                 <a class="add-wishlist" href="javascript:;" title="add to wishlist"><i
                                                         class="fa fa-heart"></i></a>
-                                                <a class="quick-view" href="javascript:;" title="quick view" data-toggle="modal"
+                                                <a class="quick-view" href="javascript:;" title="quick view"
+                                                   data-toggle="modal"
                                                    data-target="#myModal"
                                                    onclick="goodDetail(${good.id})"><i
                                                         class="fa fa-search"></i></a>
@@ -751,13 +755,13 @@
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="single-banner wow fadeIn" data-wow-duration=".5s" data-wow-delay=".5s">
                         <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/banner/11.jpg"
-                                         alt=""/></a>
+                                                    alt=""/></a>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="single-banner wow fadeIn" data-wow-duration=".5s" data-wow-delay=".5s">
                         <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/banner/12.jpg"
-                                         alt=""/></a>
+                                                    alt=""/></a>
                     </div>
                 </div>
             </div>
@@ -1159,8 +1163,9 @@
                         <div class="col-md-12">
                             <div class="single-blog">
                                 <div class="blog-img">
-                                    <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/blog/1.jpg"
-                                                     alt=""/></a>
+                                    <a href="javascript:;"><img
+                                            src="${pageContext.request.contextPath}/resources/img/blog/1.jpg"
+                                            alt=""/></a>
                                 </div>
                                 <div class="blog-content">
                                     <h3><a href="javascript:;">Lorem Ipsum</a></h3>
@@ -1180,8 +1185,9 @@
                         <div class="col-md-12">
                             <div class="single-blog">
                                 <div class="blog-img">
-                                    <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/blog/2.jpg"
-                                                     alt=""/></a>
+                                    <a href="javascript:;"><img
+                                            src="${pageContext.request.contextPath}/resources/img/blog/2.jpg"
+                                            alt=""/></a>
                                 </div>
                                 <div class="blog-content">
                                     <h3><a href="javascript:;">Lorem Ipsum</a></h3>
@@ -1200,8 +1206,9 @@
                         <div class="col-md-12">
                             <div class="single-blog">
                                 <div class="blog-img">
-                                    <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/blog/3.jpg"
-                                                     alt=""/></a>
+                                    <a href="javascript:;"><img
+                                            src="${pageContext.request.contextPath}/resources/img/blog/3.jpg"
+                                            alt=""/></a>
                                 </div>
                                 <div class="blog-content">
                                     <h3><a href="javascript:;">Lorem Ipsum</a></h3>
@@ -1220,8 +1227,9 @@
                         <div class="col-md-12">
                             <div class="single-blog">
                                 <div class="blog-img">
-                                    <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/blog/4.jpg"
-                                                     alt=""/></a>
+                                    <a href="javascript:;"><img
+                                            src="${pageContext.request.contextPath}/resources/img/blog/4.jpg"
+                                            alt=""/></a>
                                 </div>
                                 <div class="blog-content">
                                     <h3><a href="javascript:;">Lorem Ipsum</a></h3>
@@ -1258,50 +1266,58 @@
                     <div class="brand-carousel">
                         <div class="col-md-12">
                             <div class="single-brand">
-                                <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/brand/1.png"
-                                                 alt=""/></a>
+                                <a href="javascript:;"><img
+                                        src="${pageContext.request.contextPath}/resources/img/brand/1.png"
+                                        alt=""/></a>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="single-brand">
-                                <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/brand/1.png"
-                                                 alt=""/></a>
+                                <a href="javascript:;"><img
+                                        src="${pageContext.request.contextPath}/resources/img/brand/1.png"
+                                        alt=""/></a>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="single-brand">
-                                <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/brand/1.png"
-                                                 alt=""/></a>
+                                <a href="javascript:;"><img
+                                        src="${pageContext.request.contextPath}/resources/img/brand/1.png"
+                                        alt=""/></a>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="single-brand">
-                                <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/brand/1.png"
-                                                 alt=""/></a>
+                                <a href="javascript:;"><img
+                                        src="${pageContext.request.contextPath}/resources/img/brand/1.png"
+                                        alt=""/></a>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="single-brand">
-                                <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/brand/1.png"
-                                                 alt=""/></a>
+                                <a href="javascript:;"><img
+                                        src="${pageContext.request.contextPath}/resources/img/brand/1.png"
+                                        alt=""/></a>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="single-brand">
-                                <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/brand/1.png"
-                                                 alt=""/></a>
+                                <a href="javascript:;"><img
+                                        src="${pageContext.request.contextPath}/resources/img/brand/1.png"
+                                        alt=""/></a>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="single-brand">
-                                <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/brand/1.png"
-                                                 alt=""/></a>
+                                <a href="javascript:;"><img
+                                        src="${pageContext.request.contextPath}/resources/img/brand/1.png"
+                                        alt=""/></a>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="single-brand">
-                                <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/brand/1.png"
-                                                 alt=""/></a>
+                                <a href="javascript:;"><img
+                                        src="${pageContext.request.contextPath}/resources/img/brand/1.png"
+                                        alt=""/></a>
                             </div>
                         </div>
                     </div>
@@ -1370,7 +1386,8 @@
                         </div>
                     </div>
                     <div class="payment">
-                        <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/payment.png" alt=""/></a>
+                        <a href="javascript:;"><img src="${pageContext.request.contextPath}/resources/img/payment.png"
+                                                    alt=""/></a>
                     </div>
                 </div>
             </div>
@@ -1547,176 +1564,8 @@
         </div>
     </div>
 
-    <!-- userLogin modal -->
-    <div class="modal fade" id="myModal2">
-        <div class="modal-dialog" style="width:588px">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title">请先登陆/注册</h3>
-                </div>
-                <br>
-                <form class="form-horizontal">
-                    <input type="hidden" name="operate" value="update"/>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label" style="font-size:17px">用户名</label>
-                        <div class=" col-sm-8">
-                            <input class="form-control" id="loginUserName">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label" style="font-size:17px">密码</label>
-                        <div class="col-sm-8 ">
-                            <input type="password" class="form-control" id="loginUserPassword">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-3 col-sm-10">
-                            <button class="btn btn-default btn-primary col-sm-offset-3" data-dismiss="modal"
-                                    onclick="forMyModal3()">去注册
-                            </button>
-                            <button type="button" class="btn btn-default btn-primary col-sm-offset-1"
-                                    onclick="login()">
-                                登陆
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+    <jsp:include page="commen.jsp" />
 
-    <!-- userRegister modal -->
-    <div class="modal fade" id="myModal3">
-        <div class="modal-dialog" style="width:588px">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title">用户注册</h3>
-                </div>
-                <br>
-                <form id="registerForm" class="form-horizontal" action="/ttt_ssm/user/userRegister">
-                    <%--<input type="hidden" name="userOperate" value="registerUser"/>--%>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label" style="font-size:17px">用户名</label>
-                        <div class=" col-sm-8">
-                            <input class="form-control" name="userName" id="registerUserName">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label" style="font-size:17px">密码</label>
-                        <div class="col-sm-8 ">
-                            <input type="password" class="form-control" name="userPassword"
-                                   id="registerUserPassword">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label" style="font-size:17px">地址</label>
-                        <div class=" col-sm-8">
-                            <input class="form-control" name="userAddress" id="registerUserAddress">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label" style="font-size:17px">电话</label>
-                        <div class=" col-sm-8">
-                            <input class="form-control" onkeyup="value=value.replace(/[^\d.]/g,'')"
-                                   name="userMobile"
-                                   id="registerUserMobile">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label" style="font-size:17px">邮箱</label>
-                        <div class=" col-sm-8">
-                            <input class="form-control" name="userEmail" type="email" id="registerUserEmail">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-3 col-sm-10">
-                            <button class="btn btn-default btn-primary col-sm-offset-3"
-                                    onclick="registerUserFormVerify()">确定注册
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- hint modal -->
-    <div class="modal fade" tabindex="-1" role="dialog" id="myModal4">
-        <div class="modal-dialog" role="document" style="width:588px">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">&times;</span></button>
-                    <h3 class="modal-title">提示</h3>
-                </div>
-                <div class="modal-body">
-                    <p></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary" id="confirmHint">确定</button>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <!-- updateUser modal -->
-    <div class="modal fade" id="myModal5">
-        <div class="modal-dialog" style="width:588px">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title">用户资料修改</h3>
-                </div>
-                <br>
-                <form id="updateAccountForm" class="form-horizontal" action="/ttt_ssm/user/userUpdateAccount">
-                    <%--<input type="hidden" name="userOperate" value="updateUser"/>--%>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label" style="font-size:17px">用户名</label>
-                        <div class=" col-sm-8">
-                            <input class="form-control" name="userName" id="updateUserName" readonly="true"
-                                   value="${sessionScope.get("user").name}">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label" style="font-size:17px">密码</label>
-                        <div class="col-sm-8 ">
-                            <input type="password" class="form-control" name="userPassword" id="updateUserPassword"
-                                   value="${sessionScope.get("user").password}">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label" style="font-size:17px">地址</label>
-                        <div class=" col-sm-8">
-                            <input class="form-control" name="userAddress" id="updateUserAddress"
-                                   value="${sessionScope.get("user").address}">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label" style="font-size:17px">电话</label>
-                        <div class=" col-sm-8">
-                            <input class="form-control" onkeyup="value=value.replace(/[^\d.]/g,'')"
-                                   name="userMobile"
-                                   id="updateUserMobile" value="${sessionScope.get("user").mobile}">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label" style="font-size:17px">邮箱</label>
-                        <div class=" col-sm-8">
-                            <input class="form-control" name="userEmail" type="email" id="updateUserEmail"
-                                   value="${sessionScope.get("user").email}">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-3 col-sm-10">
-                            <button class="btn btn-default btn-primary col-sm-offset-3"
-                                    onclick="updateUserFormVerify()">确定修改
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
 </div>
 </div>
 
