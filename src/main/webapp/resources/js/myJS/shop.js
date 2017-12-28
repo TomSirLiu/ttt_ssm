@@ -270,11 +270,38 @@ function selectGoodsWithFuzzyGoodName() {
     });
 }
 
-// $("#selectOrderBy").on('change',function () {
-//     var type = $("option:selected", this).val();
-//     console.log(type);
-//     // goodOrderByPriceLowerFirst();
-// });
+$("#selectOrderBy").on('change',function () {
+    var type = $("option:selected", this).val();
+    console.log(type);
+    goodOrderByPriceLowerFirst();
+    if(type==="goodOrderByPriceLowerFirst"){
+        goods.sort(function (goodA,goodB) {
+            return goodA.price-goodB.price;
+        });
+    }else if(type==="goodOrderByPriceHigherFirst"){
+        goods.sort(function (goodA,goodB) {
+            return goodB.price-goodA.price;
+        });
+    }else if(type==="goodOrderByGoodNameFromAToZ"){
+        goods.sort(function (goodA,goodB) {
+            return goodA.name-goodB.name;
+        });
+    }else if(type==="goodOrderByGoodNameFromZToA"){
+        goods.sort(function (goodA,goodB) {
+            return goodB.name-goodA.name;
+        });
+    }else if(type==="goodOrderByStockMost"){
+        goods.sort(function (goodA,goodB) {
+            return goodB.stock-goodA.stock;
+        });
+    }else if(type==="goodOrderByGoodId"){
+        goods.sort(function (goodA,goodB) {
+            return goodA.id-goodB.id;
+        });
+    }
+    quantityOfGoodsPage(sizeOfEachPage);
+    showGoodsInView(currentPage, sizeOfEachPage);
+});
 
 /**
  * 价格低的商品优先显示
@@ -293,7 +320,7 @@ function goodOrderByPriceLowerFirst() {
 
     var test = goods;
     test.sort(function (goodA,goodB) {
-        return goodA.price-goodB.price;
+        return goodA.name-goodB.name;
     });
     console.log(test);
 }

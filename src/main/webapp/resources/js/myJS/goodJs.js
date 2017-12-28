@@ -11,7 +11,7 @@ $(function () {
             console.log(data);
         }
     );
-    if (window.sessionStorage.getItem("goodIdAndGoodQuantityMap") !== null) {
+    if (window.sessionStorage.getItem("goodIdAndGoodQuantityMap") !== null && window.sessionStorage.getItem("goodIdAndGoodQuantityMap") !== "") {
         goodIdAndGoodQuantityMap = window.sessionStorage.getItem("goodIdAndGoodQuantityMap").split(",");
         for (var i = 0; i < goodIdAndGoodQuantityMap.length; i++) {
             var cart = goodIdAndGoodQuantityMap[i];
@@ -66,7 +66,7 @@ function addCart(goodId, goodQuantity, ifFirst) {
         },
         function (data) {
             var good = JSON.parse(data).good;
-            var cartId = parseInt(Math.random()*1000);
+            var cartId = parseInt(Math.random() * 1000);
             var content = '<div class="media header-middle-checkout" id="cart' + cartId + '">\n' +
                 '                                <div class="media-left check-img">\n' +
                 '                                    <a href="javascript:;"><img src="' + projectName + '/resources/img/cart/' + good.category.name + '/' + good.id + '.jpg"\n' +

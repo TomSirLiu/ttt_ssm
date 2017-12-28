@@ -170,57 +170,17 @@
                 </div>
                 <div class="col-md-3 col-xs-4 col-sm-6">
                     <div class="shopping-cart">
-                        <a class="cart" href="javascript:;" title="view shopping cart">
-                                    <span class="hidden-xs">shopping cart <br>
-                                        <small>2 item(s) - £199.00</small></span>
-                        </a>
-                        <div class="top-cart-content">
-                            <div class="media header-middle-checkout">
-                                <div class="media-left check-img">
-                                    <a href="javascript:;">
-                                        <img src="${pageContext.request.contextPath}/resources/img/cart/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <div class="media-body checkout-content">
-                                    <h4 class="media-heading">
-                                        <span class="cart-count">2x</span>
-                                        <a href="javascript:;">Jacket</a>
-                                        <span class="btn-remove checkout-remove"
-                                              title="remove this product from my cart">
-                                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                                </span>
-                                    </h4>
-                                    <p>£ 78.15</p>
-                                </div>
-                            </div>
-                            <div class="media header-middle-checkout last-child">
-                                <div class="media-left check-img">
-                                    <a href="javascript:;">
-                                        <img src="${pageContext.request.contextPath}/resources/img/cart/2.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <div class="media-body checkout-content">
-                                    <h4 class="media-heading">
-                                        <span class="cart-count">1x</span>
-                                        <a href="javascript:;">Jacket</a>
-                                        <span class="btn-remove checkout-remove"
-                                              title="remove this product from my cart">
-                                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                                </span>
-                                    </h4>
-                                    <p>£ 120.85</p>
-                                </div>
-                            </div>
+                        <a class="cart" href="javascript:;" title="view shopping cart"><span class="hidden-xs">shopping cart <br><small
+                                id="conditionInCart">0 item(s) - £0.00</small></span></a>
+                        <div class="top-cart-content" id="cart-content">
+                            <%--   --%>
+
                             <div class="cart-total">
                                 <span>Total</span>
-                                <span><b>£ 199.00</b></span>
+                                <span><b id="cartTotalAmountB">£ 0.00</b></span>
                             </div>
                             <div class="checkout">
-                                <a href="javascript:;">
-                                            <span>checkout
-                                                <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
-                                            </span>
-                                </a>
+                                <a href="javascript:;"><span>checkout<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span></a>
                             </div>
                         </div>
                     </div>
@@ -750,6 +710,8 @@
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 <!-- base js -->
 <script src="${pageContext.request.contextPath}/resources/js/myJS/base.js"></script>
+<!-- goodJs js -->
+<script src="${pageContext.request.contextPath}/resources/js/myJS/goodJs.js"></script>
 </body>
 </html>
 
