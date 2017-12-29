@@ -30,6 +30,7 @@ function goodDetail(goodId) {
         function (data) {
             data = JSON.parse(data);
             $("#goodDetailDescription").html(data.good.description);
+            $("#goodDetailStock").html("库存 ："+data.good.stock);
             $("#goodDetailPrice").html("£" + data.good.price.toFixed(2));
             $("#goodDetailOldPrice").html("£" + ((data.good.price) * 1.2).toFixed(2));
             $("#goodDetailTitle").html(data.good.name);

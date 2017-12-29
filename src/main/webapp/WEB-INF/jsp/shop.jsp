@@ -847,6 +847,11 @@
                                             ..
                                         </p>
                                     </div>
+                                    <div class="short-description">
+                                        <p id="goodDetailStock">
+                                            ..
+                                        </p>
+                                    </div>
                                     <div class="add-cart">
                                         <p class="quantity cart-plus-minus">
                                             <label>Quantity</label>
