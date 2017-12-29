@@ -282,11 +282,11 @@ $("#selectOrderBy").on('change', function () {
         });
     } else if (type === "goodOrderByGoodNameFromAToZ") {
         goods.sort(function (goodA, goodB) {
-            return goodA.name - goodB.name;
+            return goodA.name.localeCompare(goodB.name, [ "zh-CN-u-co-pinyin" ]);
         });
     } else if (type === "goodOrderByGoodNameFromZToA") {
         goods.sort(function (goodA, goodB) {
-            return goodB.name - goodA.name;
+            return goodB.name.localeCompare(goodA.name, [ "zh-CN-u-co-pinyin" ]);
         });
     } else if (type === "goodOrderByStockMost") {
         goods.sort(function (goodA, goodB) {
