@@ -105,6 +105,13 @@ public class UserController {
         }
     }
 
+    @RequestMapping(value = "/reLogin")
+    @ResponseBody
+    public String reLogin( HttpServletRequest request) {
+        request.getSession().setAttribute("user", null);
+        return Msg.success().toString();
+    }
+
     @RequestMapping(value = "/shop")
     public String redirectToShop(){
         return "shop";

@@ -42,7 +42,7 @@
                 <div class="col-md-6 col-sm-12 hidden-xs">
                     <div class="header-top-left">
                         <div class="welcome-msg">
-                            <span class="default-msg hidden-xs">Welcome to 天天淘!</span>
+                            <span class="default-msg hidden-xs">Welcome to 网上商城!</span>
                             <span class="phone">Call support free: <span class="number">01234-567890</span></span>
                         </div>
                     </div>
@@ -53,7 +53,8 @@
                             <li><a class="my-account" href="javascript:;" id="modifyAccount" data-toggle="modal"
                                    data-target="#myModal5">我的账户</a></li>
                             <li><a class="my-wishlist" href="javascript:;">My Wishlist</a></li>
-                            <li><a class="login" href="javascript:;">${sessionScope.user==null?'登陆/注册':user.name}</a>
+                            <li><a class="login" href="javascript:;" data-toggle="modal"
+                                   data-target="#myModal6">${sessionScope.user==null?'登陆/注册':user.name}</a>
                             </li>
                         </ul>
                         <div class="currency language">
@@ -148,7 +149,7 @@
                                 <li><a href="${pageContext.request.contextPath}/user/entry">Home</a></li>
                                 <li><a href="${pageContext.request.contextPath}/user/about">About</a></li>
                                 <li><a href="${pageContext.request.contextPath}/user/shop">Shop</a></li>
-                                <li><a href="${pageContext.request.contextPath}/user/entrycontact.jsp">contact</a></li>
+                                <li><a href="${pageContext.request.contextPath}/user/contact">contact</a></li>
                             </ul>
                         </nav>
                     </div>
