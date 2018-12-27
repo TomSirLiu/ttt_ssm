@@ -8,6 +8,7 @@
     <meta name="author" content="">
     <meta name="keywords" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="multipart/form-data;charset=utf-8" />
 
     <!-- Mobile Specific Meta  -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -240,23 +241,84 @@
                 <div class="contact-form wow fadeIn" data-wow-duration=".5s" data-wow-delay=".5s">
                     <h3>
                         <i class="fa fa-comment-o"></i>
-                        Leave a Message
+                        Add Good
                     </h3>
                     <div class="row">
-                        <form action="mail.php" method="post">
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" placeholder="Name (required)"/>
+                        <%--  id INT(10)  NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT '商品id',
+  name VARCHAR(50)  NOT NULL COMMENT '商品名称',
+  description TEXT COMMENT '商品描述',
+  category_id INT(5)  DEFAULT 1  COMMENT '商品类别id',
+  price INT(5) COMMENT '价格',
+  is_new TINYINT(1) NOT NULL COMMENT '是否为新品',
+  is_commend TINYINT(1)  COMMENT '是否推荐',
+  is_discount TINYINT(1) COMMENT '是否特价商品',
+  stock INT(50) NOT NULL COMMENT '商品库存'--%>
+                        <form enctype="multipart/form-data" id="addGoodForm" action="/ttt_ssm/good/addGood" method="post">
+                            <div class="form-group">
+                                <label for="addGoodImage">请上传商品图片</label>
+                                <input type="file" class="file" id="addGoodImage" name="addGoodImage" >
                             </div>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="email" placeholder="Email (required)"/>
+                            <div class="form-group row">
+                                <label for="addName" class="col-sm-2 col-form-label">商品名称</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="addName" name="addName" placeholder="Name...">
+                                </div>
                             </div>
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <input type="text" placeholder="Subject"/>
+                            <div class="form-group row">
+                                <label for="addCategory" class="col-sm-2 col-form-label">商品类别</label>
+                                <div class="col-sm-10">
+                                    <select id="addCategory" name="addCategory" class="form-control">
+                                        <option selected>digital_product</option>
+                                        <option>clothes</option>
+                                        <option>toys</option>
+                                        <option>furniture</option>
+                                        <option>books</option>
+                                        <option>others</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <textarea placeholder="Message" id="message" cols="30" rows="10"></textarea>
-                                <input type="submit" value="Submit Form"/>
+                            <div class="form-group row">
+                                <label for="addPrice" class="col-sm-2 col-form-label">商品价格</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control" id="addPrice" name="addPrice" placeholder="Price...">
+                                </div>
                             </div>
+                            <div class="form-group row">
+                                <label for="addStock" class="col-sm-2 col-form-label">商品库存</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control" id="addStock" name="addStock" placeholder="Stock...">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-10">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="isNew" name="isNew">
+                                        <label class="form-check-label" for="isNew">
+                                            是否为新品
+                                        </label>
+                                        &nbsp;&nbsp;
+                                        <input class="form-check-input" type="checkbox" id="isCommend" name="isCommend">
+                                        <label class="form-check-label" for="isCommend">
+                                            是否推荐
+                                        </label>
+                                        &nbsp;&nbsp;
+                                        <input class="form-check-input" type="checkbox" id="isLowPrice" name="isLowPrice">
+                                        <label class="form-check-label" for="isLowPrice">
+                                            是否特价商品
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="addGoodDescribe">商品描述</label>
+                                <textarea class="form-control" id="addGoodDescribe" name="addGoodDescribe" rows="3"></textarea>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-10">
+                                    <button type="submit" class="btn btn-primary" >确认添加商品</button>
+                                </div>
+                            </div>
+
                         </form>
                     </div>
                 </div>
@@ -696,6 +758,10 @@
 <script src="${pageContext.request.contextPath}/resources/js/plugins.js"></script>
 <!-- main js -->
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+<%--<!--fileinput.js-->--%>
+<%--<script src="${pageContext.request.contextPath}/resources/js/fileinput.js"></script>--%>
+<%--<!--fileinput.min.js-->--%>
+<%--<script src="${pageContext.request.contextPath}/resources/js/fileinput.min.js"></script>--%>
 <!-- base js -->
 <script src="${pageContext.request.contextPath}/resources/js/myJS/base.js"></script>
 <!-- user js -->

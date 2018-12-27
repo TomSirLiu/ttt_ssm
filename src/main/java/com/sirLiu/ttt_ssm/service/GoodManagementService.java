@@ -48,10 +48,20 @@ public class GoodManagementService {
         return goodInfoJson;
     }
 
-   public List<TttGoodsinfo> fuzzyQueryOfGoodsWithGoodName(String fuzzyGoodName){
+    public List<TttGoodsinfo> fuzzyQueryOfGoodsWithGoodName(String fuzzyGoodName) {
         TttGoodsinfoExample goodsinfoExample = new TttGoodsinfoExample();
-        goodsinfoExample.createCriteria().andNameLike("%"+fuzzyGoodName+"%");
+        goodsinfoExample.createCriteria().andNameLike("%" + fuzzyGoodName + "%");
         return goodsinfoMapper.selectByExampleWithBLOBs(goodsinfoExample);
-   }
+    }
+
+    public int addGood(String name, String category, Integer price, Boolean isNew, Boolean isCommend, Boolean isDiscount, Integer stock, String description) {
+        //根据类型名称查询类型id
+        TttGoodCategoryExample tttGoodCategoryExample = new TttGoodCategoryExample();
+        tttGoodCategoryExample.or().andNameEqualTo(category);
+        int categoryId = goodCategoryMapper.selectByExample(tttGoodCategoryExample).get(0).getId();
+        //插入
+        TttGoodsinfo goodsinfo = new TttGoodsinfo(name, categoryId, price, isNew, isCommend, isDiscount, stock, description);
+        return goodsinfoMapper.insert(goodsinfo);
+    }
 
 }

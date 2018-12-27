@@ -31,6 +31,17 @@ public class TttGoodsinfo {
         this.description = description;
     }
 
+    public TttGoodsinfo(String name, Integer categoryId, Integer price, Boolean isNew, Boolean isCommend, Boolean isDiscount, Integer stock, String description) {
+        this.name = name;
+        this.categoryId = categoryId;
+        this.price = price;
+        this.isNew = isNew;
+        this.isCommend = isCommend;
+        this.isDiscount = isDiscount;
+        this.stock = stock;
+        this.description = description;
+    }
+
     public TttGoodsinfo() {
         super();
     }

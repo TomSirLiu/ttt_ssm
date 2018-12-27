@@ -19,6 +19,16 @@ $(function () {
             addCart(temp[0], temp[1], true);
         }
     }
+
+
+    $('form#addGoodForm .button').click(function(event) { // <- goes here !
+        if ($("#addName").val() === ""){
+            event.preventDefault();
+            $('form#addGoodForm .button').attr('onclick','').unbind('click');
+            alert('Sorry we leveren alleen inomstreken hijen!');
+        }
+    });
+
 });
 
 function goodDetail(goodId) {
@@ -106,3 +116,40 @@ function removeCart(cartId, goodId, goodPrice, goodQuantity) {
     goodIdAndGoodQuantityMap.splice($.inArray(goodId + "&&" + goodQuantity, goodIdAndGoodQuantityMap), 1);
     window.sessionStorage.setItem("goodIdAndGoodQuantityMap", goodIdAndGoodQuantityMap);
 }
+
+function addGoodFormVerify() {
+    // --校验数据是否正确 BEGIN
+    $('#addGoodForm').each(function(){
+        $(this).submit(function(e){
+            e.preventDefault();
+            alert('it is working!');
+            return  false;
+        })
+    })
+    if ($("#exampleFormControlFile1").val() === "") {
+        alert("请上传商品图片");
+        return false;
+    }
+    if ($("#addName").val() === "") {
+        alert("您还没有添加商品名称");
+        // $("#addGoodForm").submit(function(e){
+        //     alert('submit intercepted');
+        //     e.preventDefault(e);
+        // });
+    }
+    if ($("#addCategory").val() === "") {
+        alert("您还没有添加商品类别");
+        return false;
+    }
+    if ($("#addPrice").val() === "") {
+        alert("您还没有添加商品价格");
+        return false;
+    }
+    if ($("#addGoodDscribe").val() === "") {
+        alert("您还没有添加商品描述");
+        return false;
+    }
+    // --校验数据是否正确 END
+}
+
+

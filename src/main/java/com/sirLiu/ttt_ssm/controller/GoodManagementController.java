@@ -6,12 +6,16 @@ import com.sirLiu.ttt_ssm.model.json.GoodsInfoJson;
 import com.sirLiu.ttt_ssm.service.GoodManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -128,6 +132,46 @@ public class GoodManagementController {
             goodsJsonWithFuzzyGoodName.add(goodManagementService.convertGoodInfoToJson(goodsinfo));
         }
         return Msg.success().add("goodsWithFuzzyGoodName", goodsJsonWithFuzzyGoodName).toString();
+    }
+
+    @RequestMapping(value = "/addGood")
+    @ResponseBody
+    public String addGood(@RequestParam(value = "addName") String name,
+                          @RequestParam("addCategory") String category,
+                          @RequestParam(value = "addPrice",defaultValue = "0") Integer price,
+                          @RequestParam(value = "addStock", defaultValue = "0") Integer stock,
+                          @RequestParam(value = "isNew", required = false) String isNew,
+                          @RequestParam(value = "isCommend", required = false) String isCommend,
+                          @RequestParam(value = "isLowPrice", required = false) String isLowPrice,
+                          @RequestParam(value = "addGoodDescribe", required = false) String goodDescribe,
+                          @RequestParam("addGoodImage") MultipartFile file) throws IllegalStateException, IOException {
+
+        try {
+            if (!file.isEmpty()) {
+                //Images will be stored under "src/main/webapp/resources/img/singlepro/${category.name}/${goodI.count}.jpg"
+                List<TttGoodsinfo> goods = goodManagementService.getAllGoods();
+                int goodsId = goods.get(goods.size() - 1).getId() + 1;
+
+                BufferedImage image = new BufferedImage(290, 370, BufferedImage.TYPE_INT_RGB);
+                image.getGraphics().drawImage(ImageIO.read(file.getInputStream()), 0, 0, 290, 370, null);
+                File destination = new File("C:/Users/Dc_Pro/ttt_ssm/src/main/webapp/resources/img/singlepro/" + category + "/" + goodsId + ".jpg");
+                ImageIO.write(image, "jpg", destination);
+                File destination1 = new File("C:/Users/Dc_Pro/ttt_ssm/src/main/webapp/resources/img/singlepro/" + category + "/" + goodsId + "1.jpg");
+                ImageIO.write(image, "jpg", destination1);
+                File destination2 = new File("C:/Users/Dc_Pro/ttt_ssm/src/main/webapp/resources/img/singlepro/" + category + "/" + goodsId + "2.jpg");
+                ImageIO.write(image, "jpg", destination2);
+                File destination3 = new File("C:/Users/Dc_Pro/ttt_ssm/src/main/webapp/resources/img/singlepro/" + category + "/" + goodsId + "3.jpg");
+                ImageIO.write(image, "jpg", destination3);
+            }
+            boolean bool_isNew = !(isNew == null);
+            boolean bool_isCommend = !(isCommend == null);
+            boolean bool_isLowPrice = !(isLowPrice == null);
+            goodManagementService.addGood(name, category, price, bool_isNew, bool_isCommend, bool_isLowPrice, stock, goodDescribe);
+        } catch (Exception e) {
+            System.out.println("Exception occured" + e.getMessage());
+            return Msg.fail().toString();
+        }
+        return Msg.success().toString();
     }
 
 }
