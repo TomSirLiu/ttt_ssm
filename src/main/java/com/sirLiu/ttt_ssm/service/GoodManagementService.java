@@ -54,14 +54,28 @@ public class GoodManagementService {
         return goodsinfoMapper.selectByExampleWithBLOBs(goodsinfoExample);
     }
 
-    public int addGood(String name, String category, Integer price, Boolean isNew, Boolean isCommend, Boolean isDiscount, Integer stock, String description) {
+    public int addOrDeleteGood(String name, String category, Integer price, Boolean isNew, Boolean isCommend, Boolean isDiscount, Integer stock, String description) {
         //根据类型名称查询类型id
         TttGoodCategoryExample tttGoodCategoryExample = new TttGoodCategoryExample();
         tttGoodCategoryExample.or().andNameEqualTo(category);
         int categoryId = goodCategoryMapper.selectByExample(tttGoodCategoryExample).get(0).getId();
-        //插入
-        TttGoodsinfo goodsinfo = new TttGoodsinfo(name, categoryId, price, isNew, isCommend, isDiscount, stock, description);
-        return goodsinfoMapper.insert(goodsinfo);
+        //插入或修改 符合名称的第一个商品
+        if (selectGoodByName(name) == null) {
+            TttGoodsinfo goodsinfo = new TttGoodsinfo(name, categoryId, price, isNew, isCommend, isDiscount, stock, description);
+            return goodsinfoMapper.insert(goodsinfo);
+        } else {
+            TttGoodsinfo goodsinfo = selectGoodByName(name);
+            goodsinfo.setName(name);
+            goodsinfo.setCategoryId(categoryId);
+            goodsinfo.setPrice(price);
+            goodsinfo.setIsNew(isNew);
+            goodsinfo.setIsCommend(isCommend);
+            goodsinfo.setIsDiscount(isDiscount);
+            goodsinfo.setStock(stock);
+            goodsinfo.setDescription(description);
+            return goodsinfoMapper.updateByPrimaryKeyWithBLOBs(goodsinfo);
+        }
+
     }
 
     public int deleteGoodByName(String name) {
@@ -70,6 +84,7 @@ public class GoodManagementService {
         return goodsinfoMapper.deleteByExample(goodsinfoExample);
     }
 
+    //返回找到的第一个商品
     public TttGoodsinfo selectGoodByName(String name) {
         TttGoodsinfoExample goodsinfoExample = new TttGoodsinfoExample();
         goodsinfoExample.createCriteria().andNameEqualTo(name);

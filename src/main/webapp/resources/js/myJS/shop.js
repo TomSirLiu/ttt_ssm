@@ -143,7 +143,7 @@ function showGoodsInView(page, size) {
     //格子形式展示-- start
     $("#gried_view").html("");
     for (const index in goods) {
-        if (index > (page - 1) * size && index <= page * size) {
+        if (index >= (page - 1) * size && index <= page * size) {
             var good = goods[index];
             var content = '<div class="col-md-4 col-sm-6 col-xs-12 top-mar" style="height: 480px">' +
                 ' <div class="single-product">' +
@@ -172,7 +172,7 @@ function showGoodsInView(page, size) {
     //列表形式展示-- start
     $("#list_view .row").html("");
     for (const index in goods) {
-        if (index > (page - 1) * size && index <= page * size) {
+        if (index >= (page - 1) * size && index <= page * size) {
             var good = goods[index];
             var temp = '                                                    <div class="col-md-12 col-sm-12 col-xs-12">\n' +
                 '                                                        <div class="col-md-4 col-sm-4 col-xs-12">\n' +
@@ -282,11 +282,11 @@ $("#selectOrderBy").on('change', function () {
         });
     } else if (type === "goodOrderByGoodNameFromAToZ") {
         goods.sort(function (goodA, goodB) {
-            return goodA.name.localeCompare(goodB.name, [ "zh-CN-u-co-pinyin" ]);
+            return goodA.name.localeCompare(goodB.name, ["zh-CN-u-co-pinyin"]);
         });
     } else if (type === "goodOrderByGoodNameFromZToA") {
         goods.sort(function (goodA, goodB) {
-            return goodB.name.localeCompare(goodA.name, [ "zh-CN-u-co-pinyin" ]);
+            return goodB.name.localeCompare(goodA.name, ["zh-CN-u-co-pinyin"]);
         });
     } else if (type === "goodOrderByStockMost") {
         goods.sort(function (goodA, goodB) {

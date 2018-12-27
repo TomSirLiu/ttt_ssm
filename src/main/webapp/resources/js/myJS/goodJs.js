@@ -20,11 +20,11 @@ $(function () {
         }
     }
 
-    //绑定添加商品的表单
-    $("#addGoodForm").ajaxForm(function (data) {
+    //绑定添加或删除商品的表单
+    $("#addOrDeleteGoodForm").ajaxForm(function (data) {
         data = JSON.parse(data);
         if (data.code === "SUCCESS") {
-            alert("添加商品成功！");
+            alert(data.message);
             window.location=location;
         } else {
             alert("出错了！");

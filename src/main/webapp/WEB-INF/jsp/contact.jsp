@@ -241,24 +241,24 @@
                 <div class="contact-form wow fadeIn" data-wow-duration=".5s" data-wow-delay=".5s">
                     <h3>
                         <i class="fa fa-comment-o"></i>
-                        Add Good
+                        Add or Delete Good
                     </h3>
                     <div class="row">
-                        <form enctype="multipart/form-data" id="addGoodForm" action="/ttt_ssm/good/addGood" method="post">
+                        <form enctype="multipart/form-data" data-ajax="false" id="addOrDeleteGoodForm" action="/ttt_ssm/good/addOrDeleteGood" method="post">
                             <div class="form-group">
-                                <label for="addGoodImage">请上传商品图片</label>
-                                <input type="file" class="file" id="addGoodImage" name="addGoodImage" >
+                                <label for="goodImage">请上传商品图片</label>
+                                <input type="file" class="file" id="goodImage" name="goodImage" >
                             </div>
                             <div class="form-group row">
-                                <label for="addName" class="col-sm-2 col-form-label">商品名称</label>
+                                <label for="name" class="col-sm-2 col-form-label">商品名称</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="addName" name="addName" placeholder="Name...">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Name...">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="addCategory" class="col-sm-2 col-form-label">商品类别</label>
+                                <label for="category" class="col-sm-2 col-form-label">商品类别</label>
                                 <div class="col-sm-10">
-                                    <select id="addCategory" name="addCategory" class="form-control">
+                                    <select id="category" name="category" class="form-control">
                                         <option selected>digital_product</option>
                                         <option>clothes</option>
                                         <option>toys</option>
@@ -269,15 +269,15 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="addPrice" class="col-sm-2 col-form-label">商品价格</label>
+                                <label for="price" class="col-sm-2 col-form-label">商品价格</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control" id="addPrice" name="addPrice" placeholder="Price...">
+                                    <input type="number" class="form-control" id="price" name="price" placeholder="Price...">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="addStock" class="col-sm-2 col-form-label">商品库存</label>
+                                <label for="stock" class="col-sm-2 col-form-label">商品库存</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control" id="addStock" name="addStock" placeholder="Stock...">
+                                    <input type="number" class="form-control" id="stock" name="stock" placeholder="Stock...">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -301,12 +301,12 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="addGoodDescribe">商品描述</label>
-                                <textarea class="form-control" id="addGoodDescribe" name="addGoodDescribe" rows="3"></textarea>
+                                <label for="goodDescribe">商品描述</label>
+                                <textarea class="form-control" id="goodDescribe" name="goodDescribe" rows="3"></textarea>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-10">
-                                    <button type="submit" class="btn btn-primary" >确认添加商品</button>
+                                    <button type="submit" class="btn btn-primary" >添加或修改商品（根据名称）</button>
                                 </div>
                             </div>
 
