@@ -137,15 +137,18 @@ public class GoodManagementController {
 
     @RequestMapping(value = "/addOrDeleteGood",method = RequestMethod.POST)
     @ResponseBody
-    public String addOrDeleteGood(@RequestParam(value = "name", required = false) String name,
+    public String addOrDeleteGood(@RequestParam(value = "goodImage",required = false) MultipartFile file,
+                                  @RequestParam(value = "name", required = false) String name,
                                   @RequestParam(value = "category", required = false) String category,
-                                  @RequestParam(value = "price", required = false) Integer price,
-                                  @RequestParam(value = "stock", required = false) Integer stock,
+                                  @RequestParam(value = "price", required = false) String priceStr,
+                                  @RequestParam(value = "stock", required = false) String stockStr,
                                   @RequestParam(value = "isNew", required = false) String isNew,
                                   @RequestParam(value = "isCommend", required = false) String isCommend,
                                   @RequestParam(value = "isLowPrice", required = false) String isLowPrice,
-                                  @RequestParam(value = "goodDescribe", required = false) String goodDescribe,
-                                  @RequestParam(value = "goodImage",required = false) MultipartFile file) throws IllegalStateException, IOException {
+                                  @RequestParam(value = "goodDescribe", required = false) String goodDescribe
+                                  ) throws IllegalStateException, IOException {
+        Integer price = Integer.parseInt(priceStr);
+        Integer stock = Integer.parseInt(stockStr);
         String message;
         int goodsId;
         boolean bool_isNew = !(isNew == null);

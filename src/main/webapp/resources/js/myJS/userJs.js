@@ -133,7 +133,11 @@ function login() {
                     window.location.reload();
                 });
                 var userName = data.userName;
-                $("#myModal4 p").html("&nbsp;&nbsp;&nbsp;恭喜，&nbsp;<b>" + userName + "</b>&nbsp;!用户登陆成功！将为您自动登陆!");
+                if (!data.userName === "000000000") {
+                    $("#myModal4 p").html("&nbsp;&nbsp;&nbsp;恭喜，&nbsp;<b>" + userName + "</b>&nbsp;!用户登陆成功！将为您自动登陆!");
+                } else {
+                    $("#myModal4 p").html("&nbsp;&nbsp;&nbsp;恭喜，&nbsp;<b>" + userName + "</b>&nbsp;!管理员登陆成功！将为您自动登陆!");
+                }
                 $('#myModal4').modal({
                     keyboard: false
                 });

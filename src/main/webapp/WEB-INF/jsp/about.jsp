@@ -183,7 +183,9 @@
                                 <li><a href="${pageContext.request.contextPath}/user/entry">Home</a></li>
                                 <li><a href="${pageContext.request.contextPath}/user/about">About</a></li>
                                 <li><a href="${pageContext.request.contextPath}/user/shop">Shop</a></li>
-                                <li><a href="${pageContext.request.contextPath}/user/contact">contact</a></li>
+                                <c:if test="${sessionScope.user.name == '000000000' }">
+                                    <li><a href="${pageContext.request.contextPath}/user/contact">manage</a></li>
+                                </c:if>
                             </ul>
                         </nav>
                     </div>

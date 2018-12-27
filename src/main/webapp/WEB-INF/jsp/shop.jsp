@@ -8,6 +8,14 @@
     <meta name="author" content="">
     <meta name="keywords" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <%--<%--%>
+        <%--response.setHeader("Expires","0");--%>
+        <%--response.setHeader("Cache-Control","no-store");--%>
+        <%--response.setHeader("Pragrma","no-cache");--%>
+        <%--response.setHeader("Expires","0");--%>
+
+    <%--%>--%>
+
 
     <!-- Mobile Specific Meta  -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -28,6 +36,7 @@
     <script src="http://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
+
 <body>
 
 
@@ -189,7 +198,10 @@
                                 <li><a href="${pageContext.request.contextPath}/user/entry">Home</a></li>
                                 <li><a href="${pageContext.request.contextPath}/user/about">About</a></li>
                                 <li><a href="${pageContext.request.contextPath}/user/shop">Shop</a></li>
-                                <li><a href="${pageContext.request.contextPath}/user/contact">contact</a></li>
+                                <c:if test="${sessionScope.user.name == '000000000' }">
+                                    <li><a href="${pageContext.request.contextPath}/user/contact">manage</a></li>
+                                </c:if>
+
                             </ul>
                         </nav>
                     </div>
