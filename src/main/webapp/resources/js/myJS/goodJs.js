@@ -20,12 +20,27 @@ $(function () {
         }
     }
 
+    //绑定添加商品的表单
+    $("#addGoodForm").ajaxForm(function (data) {
+        data = JSON.parse(data);
+        if (data.code === "SUCCESS") {
+            alert("添加商品成功！");
+            window.location=location;
+        } else {
+            alert("出错了！");
+            window.location=location;
+        }
+    });
 
-    $('form#addGoodForm .button').click(function(event) { // <- goes here !
-        if ($("#addName").val() === ""){
-            event.preventDefault();
-            $('form#addGoodForm .button').attr('onclick','').unbind('click');
-            alert('Sorry we leveren alleen inomstreken hijen!');
+    //绑定删除商品的表单
+    $("#deleteGoodByNameForm").ajaxForm(function (data) {
+        data = JSON.parse(data);
+        if (data.code === "SUCCESS") {
+            alert("删除商品成功！");
+            window.location=location;
+        } else {
+            alert("没有该商品！");
+            window.location=location;
         }
     });
 

@@ -244,15 +244,6 @@
                         Add Good
                     </h3>
                     <div class="row">
-                        <%--  id INT(10)  NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT '商品id',
-  name VARCHAR(50)  NOT NULL COMMENT '商品名称',
-  description TEXT COMMENT '商品描述',
-  category_id INT(5)  DEFAULT 1  COMMENT '商品类别id',
-  price INT(5) COMMENT '价格',
-  is_new TINYINT(1) NOT NULL COMMENT '是否为新品',
-  is_commend TINYINT(1)  COMMENT '是否推荐',
-  is_discount TINYINT(1) COMMENT '是否特价商品',
-  stock INT(50) NOT NULL COMMENT '商品库存'--%>
                         <form enctype="multipart/form-data" id="addGoodForm" action="/ttt_ssm/good/addGood" method="post">
                             <div class="form-group">
                                 <label for="addGoodImage">请上传商品图片</label>
@@ -319,6 +310,29 @@
                                 </div>
                             </div>
 
+                        </form>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="contact-form wow fadeIn" data-wow-duration=".5s" data-wow-delay=".5s">
+                    <h3>
+                        <i class="fa fa-comment-o"></i>
+                        Delete Good
+                    </h3>
+                    <div class="row">
+                        <form id="deleteGoodByNameForm" action="/ttt_ssm/good/deleteGood" method="post">
+                            <div class="form-group row">
+                                <label for="deleteName" class="col-sm-3 col-form-label">商品名称(准确全称)</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="deleteName" name="deleteName" placeholder="Name...">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-10">
+                                    <button type="submit" class="btn btn-primary" >确认删除商品</button>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>

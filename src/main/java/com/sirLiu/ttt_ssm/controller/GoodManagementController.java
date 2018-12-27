@@ -138,7 +138,7 @@ public class GoodManagementController {
     @ResponseBody
     public String addGood(@RequestParam(value = "addName") String name,
                           @RequestParam("addCategory") String category,
-                          @RequestParam(value = "addPrice",defaultValue = "0") Integer price,
+                          @RequestParam(value = "addPrice", defaultValue = "0") Integer price,
                           @RequestParam(value = "addStock", defaultValue = "0") Integer stock,
                           @RequestParam(value = "isNew", required = false) String isNew,
                           @RequestParam(value = "isCommend", required = false) String isCommend,
@@ -149,11 +149,25 @@ public class GoodManagementController {
         try {
             if (!file.isEmpty()) {
                 //Images will be stored under "src/main/webapp/resources/img/singlepro/${category.name}/${goodI.count}.jpg"
-                List<TttGoodsinfo> goods = goodManagementService.getAllGoods();
-                int goodsId = goods.get(goods.size() - 1).getId() + 1;
+                boolean bool_isNew = !(isNew == null);
+                boolean bool_isCommend = !(isCommend == null);
+                boolean bool_isLowPrice = !(isLowPrice == null);
+                goodManagementService.addGood(name, category, price, bool_isNew, bool_isCommend, bool_isLowPrice, stock, goodDescribe);
 
-                BufferedImage image = new BufferedImage(290, 370, BufferedImage.TYPE_INT_RGB);
-                image.getGraphics().drawImage(ImageIO.read(file.getInputStream()), 0, 0, 290, 370, null);
+                List<TttGoodsinfo> goods = goodManagementService.getAllGoods();
+                int goodsId = goods.get(goods.size() - 1).getId();
+
+                int width, height;
+                if ("others".equals(category)) {
+                    width = 2560;
+                    height = 1536;
+                } else {
+                    width = 290;
+                    height = 370;
+                }
+
+                BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+                image.getGraphics().drawImage(ImageIO.read(file.getInputStream()), 0, 0, width, height, null);
                 File destination = new File("C:/Users/Dc_Pro/ttt_ssm/src/main/webapp/resources/img/singlepro/" + category + "/" + goodsId + ".jpg");
                 ImageIO.write(image, "jpg", destination);
                 File destination1 = new File("C:/Users/Dc_Pro/ttt_ssm/src/main/webapp/resources/img/singlepro/" + category + "/" + goodsId + "1.jpg");
@@ -163,15 +177,23 @@ public class GoodManagementController {
                 File destination3 = new File("C:/Users/Dc_Pro/ttt_ssm/src/main/webapp/resources/img/singlepro/" + category + "/" + goodsId + "3.jpg");
                 ImageIO.write(image, "jpg", destination3);
             }
-            boolean bool_isNew = !(isNew == null);
-            boolean bool_isCommend = !(isCommend == null);
-            boolean bool_isLowPrice = !(isLowPrice == null);
-            goodManagementService.addGood(name, category, price, bool_isNew, bool_isCommend, bool_isLowPrice, stock, goodDescribe);
+
         } catch (Exception e) {
             System.out.println("Exception occured" + e.getMessage());
             return Msg.fail().toString();
         }
         return Msg.success().toString();
+    }
+
+    @RequestMapping(value = "/deleteGood")
+    @ResponseBody
+    public String deleteGood(@RequestParam(value = "deleteName") String name) {
+        if (goodManagementService.selectGoodByName(name) == null) {
+            return Msg.fail().add("error", "没有这个商品").toString();
+        } else {
+            goodManagementService.deleteGoodByName(name);
+            return Msg.success().toString();
+        }
     }
 
 }

@@ -64,4 +64,21 @@ public class GoodManagementService {
         return goodsinfoMapper.insert(goodsinfo);
     }
 
+    public int deleteGoodByName(String name) {
+        TttGoodsinfoExample goodsinfoExample = new TttGoodsinfoExample();
+        goodsinfoExample.or().andNameEqualTo(name);
+        return goodsinfoMapper.deleteByExample(goodsinfoExample);
+    }
+
+    public TttGoodsinfo selectGoodByName(String name) {
+        TttGoodsinfoExample goodsinfoExample = new TttGoodsinfoExample();
+        goodsinfoExample.createCriteria().andNameEqualTo(name);
+        List<TttGoodsinfo> goodsinfos = goodsinfoMapper.selectByExampleWithBLOBs(goodsinfoExample);
+        if (goodsinfos.size() == 0) {
+            return null;
+        } else {
+            return goodsinfos.get(0);
+        }
+    }
+
 }
